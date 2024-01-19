@@ -56,16 +56,23 @@ class DocsUploadDept {
     cy.wait(1000);
   }
   ClickBrowseBtn() {
-    cy.get('[type="file"]').selectFile(
-      {
-        contents: "cypress/fixtures/Images/JPG DOCS.jpg",
-        fileName: "JPG DOCS.jpg",
-        mimeType: "text/jpg",
-        lastModified: Date.now(),
-      },
+    cy.get('[type="file"]').attachFile(
+      ["JPG DOCS.jpg", "DOCX ENC L2DG.docx"],
+
       { force: true }
     );
   }
+  // ClickBrowseBtn() {
+  //   cy.get('[type="file"]').selectFile(
+  //     {
+  //       contents: "cypress/fixtures/Images/JPG DOCS.jpg",
+  //       fileName: "JPG DOCS.jpg",
+  //       mimeType: "text/jpg",
+  //       lastModified: Date.now(),
+  //     },
+  //     { force: true }
+  //   );
+  // }
   EnableDownload() {
     this.WebElements.EnableDown.click();
   }
@@ -82,7 +89,8 @@ class DocsUploadDept {
     this.WebElements.AddTag().click();
   }
   DocumentEdit() {
-    this.WebElements.DocsEdit().click();
+    this.WebElements.DocsEdit().eq(1).click();
+
     //   this.WebElements.AddTag().click();
   }
   DocumentName(renameDocs) {
