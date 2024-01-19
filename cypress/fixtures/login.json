@@ -1,0 +1,10 @@
+{
+  "loginData": {
+    "inputmail": "gradle.ananth@gmail.com",
+    "inputpassword": "Test@123"
+  },
+  "selectDept": {
+    "Dept1": "",
+    "Dept2": ""
+  }
+}

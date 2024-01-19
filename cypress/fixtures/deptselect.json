@@ -1,0 +1,15 @@
+{
+  "selectDepartments": {
+    "Dept1": "Corporate Department",
+    "Dept2": "Sanity Testing",
+    "selectMatterInt": "LegalMatterByTM",
+    "selectMatterExt": "Legal-External"
+  },
+  "docsEdit": {
+    "renameDocs": "Name Edited11",
+    "Description": "Description Changed11",
+    "expDate": "6/20/2024",
+    "renameAssert": "Name Edited11",
+    "descAssert": "Description Changed11"
+  }
+}
