@@ -11,11 +11,11 @@ describe("Iteract with multiple elements", function () {
     ).click();
     cy.get(".upload").click();
     cy.get(".multicheck > .fa").click();
-    cy.get(".callselect").each(function ($el, index, $listOfElements) {
-      if ($el.text === "Docuemnt Test") {
-        cy.get("#flexCheckDefault").each;
-      }
-    });
+    cy
+      .xpath
+      //div//label[text()="TestDept"]//following::input[1]
+      ()
+      .click();
     //   .should("contains.text", "Document Test")
     //   .each(function ($el, index, $listOfElements) {
     //     cy.log($el.text());

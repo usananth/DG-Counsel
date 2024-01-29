@@ -1,0 +1,18 @@
+[
+  {
+    "testCaseName": "Test Case 1",
+    "data": {
+      "name": "John Doe",
+      "email": "john@example.com",
+      "age": 25
+    }
+  },
+  {
+    "testCaseName": "Test Case 2",
+    "data": {
+      "name": "Jane Doe",
+      "email": "jane@example.com",
+      "age": 30
+    }
+  }
+]

@@ -3,8 +3,11 @@
     "inputmail": "gradle.ananth@gmail.com",
     "inputpassword": "Test@123"
   },
-  "selectDept": {
-    "Dept1": "",
-    "Dept2": ""
+
+  "selectDepartments": {
+    "Dept1": "Corporate Department",
+    "Dept2": "Sanity Testing",
+    "selectMatterInt": "LegalMatterTM",
+    "selectMatterExt": "Legal-External"
   }
 }

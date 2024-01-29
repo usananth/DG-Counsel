@@ -1,66 +1,87 @@
-/// <reference types="Cypress"/>
 import DocumentsUploadDept from "../../PageObjects/DocUploadPOM";
+import Login from "../../PageObjects/LoginPOM";
+const ObjectJson = require("../../fixtures/DocJson.json");
+const DocumentsObject = new DocumentsUploadDept();
+const login = new Login();
+
 import "cypress-file-upload";
-describe("Document Upload Department", () => {
+describe("Documents In Departments", () => {
   var data;
-  const uploadObject = new DocumentsUploadDept();
   before(() => {
-    cy.visit("http://staging.corp.lauditor.com/login");
-    cy.get('input[id="id_email"]').type("gradle.ananth@gmail.com");
-    cy.get('input[id="id_password"]').type("Test@123");
-    cy.get('button[type="submit"]').click();
-    cy.fixture("deptselect").then((value) => {
+    login.visit();
+    cy.fixture("login").then((value) => {
       data = value;
+      login.userName(data.loginData.inputmail);
+      login.userPassword(data.loginData.inputpassword);
+      login.submitBtn();
     });
+
+    // cy.fixture("login").then((value) => {
+    //   data = value;
+    // });
   });
 
-  it("Documents Menu", () => {
-    //  const uploadObject = new DocumentsUploadDept();
-    //  var DocsRename = data.selectDepartments.renameDocs;
+  it("TestCase: 1.DocumentsUpload-InternalMatter-EnableDownload", () => {
     var selectDepts = [
       data.selectDepartments.Dept1,
       data.selectDepartments.Dept2,
     ];
-    var DocName = data.docsEdit.renameDocs;
-    var DocDesc = data.docsEdit.Description;
-    var DocExpDate = data.docsEdit.expDate;
-
-    //  var DocsEdit = [DEdit.renameDocs, DEdit.Description, DEdit.expDate];
     var intMatter = data.selectDepartments.selectMatterInt;
     var extMatter = data.selectDepartments.selectMatterExt;
-    uploadObject.DocsMenuClick();
-    uploadObject.UploadTabClick();
-    uploadObject.SelectDeptAdd();
-    uploadObject.SelectDepts(selectDepts);
-    uploadObject.SelectDeptMinus();
-    //  uploadObject.selectInternalMatterRadioBtn();
-    uploadObject.SelectExternalMatterRadioBtn();
-    // uploadObject.selectMatterDropdown(intMatter);
-    uploadObject.SelectMatterDropdown(extMatter);
-    //  uploadObject.EnableDownload();
-    uploadObject.ClickBrowseBtn();
-    uploadObject.DocumentsEdits(DocName, DocDesc, DocExpDate);
+    DocumentsObject.DocsMenuClick();
+    DocumentsObject.UploadTabClick();
+    DocumentsObject.SelectDeptAdd();
+    DocumentsObject.SelectDepts(selectDepts);
+    DocumentsObject.SelectDeptMinus();
+    DocumentsObject.SelectInternalMatterRadioBtn();
+    // DocumentsObject.SelectExternalMatterRadioBtn();
+    // DocumentsObject.selectMatterDropdown(intMatter);
+    DocumentsObject.SelectMatterDropdown(intMatter);
+    DocumentsObject.ClickBrowseBtn();
+    DocumentsObject.EnableDownload();
+    DocumentsObject.UploadSaveBtn();
+  });
+
+  it("TestCase:2.Document-Upload-InternalMatter-EnableDownload-Cancel", () => {
+    DocumentsObject.DocsMenuClick();
+    DocumentsObject.UploadTabClick();
+    DocumentsObject.SelectDeptAdd();
+    DocumentsObject.SelectDepts(selectDepts);
+    DocumentsObject.SelectDeptMinus();
+    //  DocumentsObject.selectInternalMatterRadioBtn();
+    DocumentsObject.SelectExternalMatterRadioBtn();
+    // DocumentsObject.selectMatterDropdown(intMatter);
+    DocumentsObject.SelectMatterDropdown(extMatter);
+
+    DocumentsObject.ClickBrowseBtn();
+    DocumentsObject.EnableDownload();
+  });
+  it("TestCase:3.Document-Upload-InternalMatter-Without-EditData", () => {
+    DocumentsObject.DocsMenuClick();
+    DocumentsObject.UploadTabClick();
+    DocumentsObject.SelectDeptAdd();
+    DocumentsObject.SelectDepts(selectDepts);
+    DocumentsObject.SelectDeptMinus();
+    //  DocumentsObject.selectInternalMatterRadioBtn();
+    DocumentsObject.SelectExternalMatterRadioBtn();
+    // DocumentsObject.selectMatterDropdown(intMatter);
+    DocumentsObject.SelectMatterDropdown(extMatter);
+
+    DocumentsObject.ClickBrowseBtn();
+    DocumentsObject.EnableDownload();
+  });
+  it("TestCase:3.Document-Upload-InternalMatter-Without-EditData-", () => {
+    DocumentsObject.DocsMenuClick();
+    DocumentsObject.UploadTabClick();
+    DocumentsObject.SelectDeptAdd();
+    DocumentsObject.SelectDepts(selectDepts);
+    DocumentsObject.SelectDeptMinus();
+    //  DocumentsObject.selectInternalMatterRadioBtn();
+    DocumentsObject.SelectExternalMatterRadioBtn();
+    // DocumentsObject.selectMatterDropdown(intMatter);
+    DocumentsObject.SelectMatterDropdown(extMatter);
+
+    DocumentsObject.ClickBrowseBtn();
+    DocumentsObject.EnableDownload();
   });
 });
-// var DocsEdit = [
-//   DEdit.AllDocuments.renameDocs,
-//   DEdit.DocumentsEdit.AllDocuments.Description,
-//   DEdit.DocumentsEdit.AllDocuments.expDate,
-// ];
-//uploadObject.DocumentsEdits();
-// uploadObject.DocumentName(DEdit.DocumentsEdit.AllDocuments.renameDocs);
-// uploadObject.DescriptionChange(
-//   DEdit.DocumentsEdit.AllDocuments.Description
-// );
-// uploadObject.DatepickerSelection(DEdit.DocumentsEdit.AllDocuments.expDate);
-// uploadObject.DocEditSaveBtn();
-// uploadObject.UploadBtn();
-// uploadObject.ViewChanges();
-// uploadObject.DocsNameEditsAssert(
-//   DEdit.DocumentsEdit.AllDocuments.renameAssert
-// );
-// uploadObject.DescChangesAssert(DEdit.DocumentsEdit.AllDocuments.descAssert);
-//  uploadObject.UploadDocumentEdit(DocsEdit);
-
-// uploadObject.ExpMonth(ExpDate.expYear);
-// uploadObject.ExpDate(ExpDate.expYear);

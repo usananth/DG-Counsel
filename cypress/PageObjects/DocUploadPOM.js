@@ -1,4 +1,18 @@
 import "cypress-file-upload";
+// const ObjectJson = require("../../fixtures/DocJson.json");
+// const DocEdits = require("../fixtures/DocJson.json");
+const EditData = [
+  {
+    name: "011EditDoc",
+    des: "Description One 01",
+    ed: "5/4/2024",
+  },
+  {
+    name: "022EditDoc",
+    des: "Description One 2",
+    ed: "5/6/2024",
+  },
+];
 
 class DocsUploadDept {
   WebElements = {
@@ -18,14 +32,16 @@ class DocsUploadDept {
     DocsEditSave: () => cy.get(".btnsave"),
     UploadSave: () => cy.get(".btnsave"),
     ViewChange: () => cy.get(".alertbtn"),
+    UploadMore: () => cy.get(".btn.btn-default.upload-btn"),
     AssertDocs: () => cy.xpath("//tr//td[1]"),
     AssertDesc: () => cy.xpath("//tbody/tr[1]/td[2]"),
   };
+
   DocsMenuClick() {
     this.WebElements.DocsMenu().click();
   }
   UploadTabClick() {
-    cy.wait(1000);
+    cy.wait(2000);
     this.WebElements.UploadTab().click();
   }
   SelectDeptAdd() {
@@ -58,10 +74,25 @@ class DocsUploadDept {
   }
   ClickBrowseBtn() {
     cy.get('[type="file"]').attachFile(
-      ["JPG DOCS.jpg", "DOCX ENC L2DG.docx"],
+      ["LAW ENC L2DG.jpeg", "PDF  ENC.pdf"],
 
       { force: true }
     );
+  }
+  EnableDownload() {
+    this.WebElements.EnableDown().click();
+  }
+  DisableDownload() {
+    this.WebElements.DisableDown().click();
+  }
+  EnableEncryption() {
+    this.WebElements.EnableEncrypt().click();
+  }
+  DisableEncryption() {
+    this.WebElements.DisableEncrypt().click();
+  }
+  AddTags() {
+    this.WebElements.AddTag().click();
   }
   // ClickBrowseBtn() {
   //   cy.get('[type="file"]').selectFile(
@@ -74,23 +105,7 @@ class DocsUploadDept {
   //     { force: true }
   //   );
   // }
-  EnableDownload() {
-    this.WebElements.EnableDown.click();
-  }
-  DisableDownload() {
-    this.WebElements.DisableDown.click();
-  }
-  EnableEncryption() {
-    this.WebElements.EnableEncrypt.click();
-  }
-  DisableEncryption() {
-    this.WebElements.DisableEncrypt.click();
-  }
-  AddTags() {
-    this.WebElements.AddTag().click();
-  }
   DocumentName(renameDocs) {
-    this.WebElements.DocsEdit1().click();
     cy.scrollTo("bottom");
     cy.get("#documentName").clear();
     cy.get("#documentName").type(renameDocs);
@@ -105,15 +120,38 @@ class DocsUploadDept {
   }
 
   DocEditSaveBtn() {
-    this.WebElements.DocsEditSave().click({ multiple: true });
+    this.WebElements.DocsEditSave().click();
   }
 
-  UploadBtn() {
+  UploadSaveBtn() {
+    cy.wait(4000);
     this.WebElements.UploadSave().click();
   }
   ViewChanges() {
     this.WebElements.ViewChange().click();
     cy.scrollTo(0, 300);
+  }
+  DocsEditAllField(DocName, DocDes, ExpDate) {
+    this.DocumentName(DocName);
+    this.DescriptionChange(DocDes);
+    this.DatepickerSelection(ExpDate);
+    this.DocEditSaveBtn();
+  }
+  DocumentEditAllFields(intArray, des) {
+    // var editBtn = cy.get(".fa.fa-edit");
+    // for (let jj = 0; jj < intArray.length; jj++) {
+    //   cy.wait(2000);
+    //   let eb = intArray[jj];
+    //   editBtn = eb;
+    //   editBtn.click;
+    const EditIcon = cy.get(".fa.fa-edit");
+    for (let i = 0; i <= 13; i++) {
+      let Editbtn = intArray[i];
+      EditIcon.get(Editbtn).click();
+
+      // editBtn.get(eb).click();
+      this.DocsEditAllField(des[eb][0], des[eb][1], des[eb][2]);
+    }
   }
 
   DocsNameEditsAssert(docsAssert) {
@@ -122,21 +160,98 @@ class DocsUploadDept {
   DescChangesAssert(descAssert) {
     this.WebElements.AssertDesc().should("contain", descAssert);
   }
-  DocumentsEdits(DocName, DocDesc, DocExpiry) {
-    cy.get(".fa.fa-edit").each(($element, index, $list) => {
-      cy.wrap($element).click();
-      cy.wait(1000);
-      cy.scrollTo("bottom");
-      cy.get("#documentName").clear();
-      cy.get("#documentName").type(DocName);
-      cy.get(":nth-child(2) > .form-group > .form-control").clear();
-      cy.get(":nth-child(2) > .form-group > .form-control").type(DocDesc);
-      // cy.get("#mat-input-0").clear();
-      cy.get(".mat-datepicker-input").type(DocExpiry);
-      cy.wait(2000);
-      cy.get(".btnsave").click();
+
+  NewDocsEdits() {
+    EditData.forEach((EData) => {
+      cy.get("i.fa.fa-edit").each(($EditBtn, $index) => {
+        cy.wrap($EditBtn).click({ force: true });
+        {
+          cy.wait(1000);
+          cy.scrollTo("bottom");
+          cy.get("#documentName").clear({ force: true });
+          cy.wait(1000);
+          cy.get("#documentName").type(EData.name);
+          cy.wait(1000);
+          cy.get(":nth-child(2) > .form-group > .form-control").clear({
+            force: true,
+          });
+          cy.wait(1000);
+          cy.get(":nth-child(2) > .form-group > .form-control").type(EData.des);
+          cy.wait(1000);
+          cy.get(".mat-datepicker-input").clear({ force: true });
+          cy.wait(1000);
+          cy.get(".mat-datepicker-input").type(EData.ed);
+          cy.wait(2000);
+
+          cy.get(".btnsave").click({ force: true });
+          cy.wait(2000);
+        }
+        this.WebElements.UploadSave().click({ force: true });
+
+        cy.wait(2000);
+      });
     });
+    //  this.WebElements.UploadSave().click({ force: true });
   }
+
+  DocumentsEdits(intArray, des) {
+    for (let i = 0; i <= 13; i++) {
+      let Editbtn = intArray[i];
+      EditIcon.get(Editbtn).click();
+      cy.scrollTo("bottom");
+    }
+    const EditIcon = cy.get(".fa.fa-edit");
+    for (let Ei of EditIcon) {
+      cy.wrap(EditData).each((fields) => {
+        cy.scrollTo("bottom");
+        cy.get("#documentName").clear({ force: true });
+        cy.get("#documentName").type(fields.renameDocs);
+        cy.get(":nth-child(2) > .form-group > .form-control").clear({
+          force: true,
+        });
+        cy.get(":nth-child(2) > .form-group > .form-control").type(
+          fields.Description
+        );
+        cy.get(".mat-datepicker-input").clear({ force: true });
+        cy.get(".mat-datepicker-input").type(fields.expDate);
+        cy.wait(1000);
+        cy.get(".btnsave").click({ force: true });
+      });
+      this.WebElements.UploadSave().click({ force: true });
+    }
+  }
+
+  // }
+  // DocumentsEdits(DocName, DocDesc, DocExpiry) {
+  //   cy.get(".fa.fa-edit").each(($element, index, $list) => {
+  //     cy.wrap($element).click();
+  //     cy.wait(2000);
+  //     cy.scrollTo("bottom");
+  //     cy.get("#documentName").clear();
+  //     cy.get("#documentName").type(DocName);
+  //     cy.get(":nth-child(2) > .form-group > .form-control").clear();
+  //     cy.get(":nth-child(2) > .form-group > .form-control").type(DocDesc);
+  //     // cy.get("#mat-input-0").clear();
+  //     cy.get(".mat-datepicker-input").type(DocExpiry);
+  //     cy.wait(2000);
+  //     cy.get(".btnsave").click();
+  //   });
+  // }
+
+  // DocumentsEdits(intArray, des) {
+  //   //   function editAllField(intArray, des) {
+  //   let jj = 0;
+  //   for (jj = 0; jj < intArray.length; jj++) {
+  //     let eb = intArray[jj];
+
+  //     DocsEdit = [eb].click();
+
+  //     cy.scrollTo("bottom");
+  //     cy.wait(2000);
+  //     // editAllFields(des[eb][0], des[eb][1], des[eb][2]);
+  //     this.DocumentEditAllFields(des[eb][0], des[eb][1], des[eb][2]);
+  //   }
+  // }
 }
 
 export default DocsUploadDept;

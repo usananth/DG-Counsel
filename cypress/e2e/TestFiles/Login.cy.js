@@ -1,13 +1,13 @@
 /// <reference types="Cypress"/>
-import Login from "../../PageObjects/LoginPageObjects.js";
+import Login from "../../PageObjects/LoginPOM";
 describe("Login Page", () => {
-  it.only("Landing Page", () => {
-    cy.visit("http://staging.corp.lauditor.com/login");
-    cy.fixture("login").then((data) => {
-      const logObj = new Login();
-      logObj.userEmail(data.inputmail);
-      logObj.userPassword(data.inputpassword);
-      logObj.submitBtn();
+  var data;
+  it("Landing Page", () => {
+    cy.fixture("login").then((value) => {
+      data = value;
+      Login.userEmail(data.loginData.inputmail);
+      Login.userPassword(data.loginData.inputpassword);
+      Login.submitBtn();
     });
   });
 });
