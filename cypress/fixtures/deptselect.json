@@ -6,10 +6,10 @@
     "selectMatterExt": "Legal-External"
   },
   "docsEdit": {
-    "renameDocs": "Name Edited12",
-    "Description": "Description Changed12",
+    "renameDocs": "DocACS1",
+    "Description": "DesEdit1",
     "expDate": "6/20/2024",
-    "renameAssert": "Name Edited12",
-    "descAssert": "Description Changed12"
+    "renameAssert": "DocACS1",
+    "descAssert": "DesEdit1"
   }
 }

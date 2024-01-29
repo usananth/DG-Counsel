@@ -3,7 +3,7 @@ import DocumentsUploadDept from "../../PageObjects/DocUploadPOM";
 import "cypress-file-upload";
 describe("Document Upload Department", () => {
   var data;
-
+  const uploadObject = new DocumentsUploadDept();
   before(() => {
     cy.visit("http://staging.corp.lauditor.com/login");
     cy.get('input[id="id_email"]').type("gradle.ananth@gmail.com");
@@ -15,19 +15,17 @@ describe("Document Upload Department", () => {
   });
 
   it("Documents Menu", () => {
-    const uploadObject = new DocumentsUploadDept();
+    //  const uploadObject = new DocumentsUploadDept();
     //  var DocsRename = data.selectDepartments.renameDocs;
     var selectDepts = [
       data.selectDepartments.Dept1,
       data.selectDepartments.Dept2,
     ];
-    var ExpDate = [
-      data.docsEdit.renameDocs,
-      data.docsEdit.Description,
-      data.docsEdit.expYear,
-      data.docsEdit.expMonth,
-      data.docsEdit.expDate,
-    ];
+    var DocName = data.docsEdit.renameDocs;
+    var DocDesc = data.docsEdit.Description;
+    var DocExpDate = data.docsEdit.expDate;
+
+    //  var DocsEdit = [DEdit.renameDocs, DEdit.Description, DEdit.expDate];
     var intMatter = data.selectDepartments.selectMatterInt;
     var extMatter = data.selectDepartments.selectMatterExt;
     uploadObject.DocsMenuClick();
@@ -41,20 +39,28 @@ describe("Document Upload Department", () => {
     uploadObject.SelectMatterDropdown(extMatter);
     //  uploadObject.EnableDownload();
     uploadObject.ClickBrowseBtn();
-    uploadObject.DocumentEdit();
-    uploadObject.DocumentName(data.docsEdit.renameDocs);
-    uploadObject.DescriptionChange(data.docsEdit.Description);
-    uploadObject.DatepickerSelection(data.docsEdit.expDate);
-    uploadObject.DocEditSaveBtn();
-    uploadObject.UploadBtn();
-    uploadObject.ViewChanges();
-    uploadObject.DocsNameEditsAssert(data.docsEdit.renameAssert);
-    uploadObject.DescChangesAssert(data.docsEdit.descAssert);
-    // uploadObject.ExpMonth(ExpDate.expYear);
-    // uploadObject.ExpDate(ExpDate.expYear);
-
-    //  cy.get("#btnadd").click();
+    uploadObject.DocumentsEdits(DocName, DocDesc, DocExpDate);
   });
-
-  //  it.only("Single File Upload", () => {});
 });
+// var DocsEdit = [
+//   DEdit.AllDocuments.renameDocs,
+//   DEdit.DocumentsEdit.AllDocuments.Description,
+//   DEdit.DocumentsEdit.AllDocuments.expDate,
+// ];
+//uploadObject.DocumentsEdits();
+// uploadObject.DocumentName(DEdit.DocumentsEdit.AllDocuments.renameDocs);
+// uploadObject.DescriptionChange(
+//   DEdit.DocumentsEdit.AllDocuments.Description
+// );
+// uploadObject.DatepickerSelection(DEdit.DocumentsEdit.AllDocuments.expDate);
+// uploadObject.DocEditSaveBtn();
+// uploadObject.UploadBtn();
+// uploadObject.ViewChanges();
+// uploadObject.DocsNameEditsAssert(
+//   DEdit.DocumentsEdit.AllDocuments.renameAssert
+// );
+// uploadObject.DescChangesAssert(DEdit.DocumentsEdit.AllDocuments.descAssert);
+//  uploadObject.UploadDocumentEdit(DocsEdit);
+
+// uploadObject.ExpMonth(ExpDate.expYear);
+// uploadObject.ExpDate(ExpDate.expYear);

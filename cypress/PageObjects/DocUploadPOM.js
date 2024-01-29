@@ -14,7 +14,7 @@ class DocsUploadDept {
     EnableEncrypt: () => cy.get('[for="btnradio3"]'),
     DisableEncrypt: () => cy.get('[for="btnradio5"]'),
     AddTag: () => cy.get('[for="btnradio4"]'),
-    DocsEdit: () => cy.get("tr > :nth-child(1) > .fa"),
+    DocsEdit: () => cy.get(".fa.fa-edit"),
     DocsEditSave: () => cy.get(".btnsave"),
     UploadSave: () => cy.get(".btnsave"),
     ViewChange: () => cy.get(".alertbtn"),
@@ -25,6 +25,7 @@ class DocsUploadDept {
     this.WebElements.DocsMenu().click();
   }
   UploadTabClick() {
+    cy.wait(1000);
     this.WebElements.UploadTab().click();
   }
   SelectDeptAdd() {
@@ -88,12 +89,8 @@ class DocsUploadDept {
   AddTags() {
     this.WebElements.AddTag().click();
   }
-  DocumentEdit() {
-    this.WebElements.DocsEdit().eq(1).click();
-
-    //   this.WebElements.AddTag().click();
-  }
   DocumentName(renameDocs) {
+    this.WebElements.DocsEdit1().click();
     cy.scrollTo("bottom");
     cy.get("#documentName").clear();
     cy.get("#documentName").type(renameDocs);
@@ -103,13 +100,12 @@ class DocsUploadDept {
     cy.get(":nth-child(2) > .form-group > .form-control").type(editDesc);
   }
   DatepickerSelection(expDate) {
+    cy.get("#mat-input-0").clear();
     cy.get("#mat-input-0").type(expDate);
   }
-  SelectExpirateDate(date) {
-    cy.get(".mat-mdc-button-touch-target").type(date);
-  }
+
   DocEditSaveBtn() {
-    this.WebElements.DocsEditSave().click();
+    this.WebElements.DocsEditSave().click({ multiple: true });
   }
 
   UploadBtn() {
@@ -125,6 +121,21 @@ class DocsUploadDept {
   }
   DescChangesAssert(descAssert) {
     this.WebElements.AssertDesc().should("contain", descAssert);
+  }
+  DocumentsEdits(DocName, DocDesc, DocExpiry) {
+    cy.get(".fa.fa-edit").each(($element, index, $list) => {
+      cy.wrap($element).click();
+      cy.wait(1000);
+      cy.scrollTo("bottom");
+      cy.get("#documentName").clear();
+      cy.get("#documentName").type(DocName);
+      cy.get(":nth-child(2) > .form-group > .form-control").clear();
+      cy.get(":nth-child(2) > .form-group > .form-control").type(DocDesc);
+      // cy.get("#mat-input-0").clear();
+      cy.get(".mat-datepicker-input").type(DocExpiry);
+      cy.wait(2000);
+      cy.get(".btnsave").click();
+    });
   }
 }
 
