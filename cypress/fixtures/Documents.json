@@ -1,0 +1,28 @@
+{
+  "loginData": {
+    "inputmail": "gradle.ananth@gmail.com",
+    "inputpassword": "Test@123"
+  },
+
+  "selectDepartments": {
+    "Dept1": "Corporate Department",
+    "Dept2": "Sanity Testing",
+    "selectMatterInt": "LegalMatterTM",
+    "selectMatterExt": "Legal-External"
+  },
+  "documentsAssert": {
+    "DocumentName1": "151",
+    "DocumentName2": "161"
+  },
+
+  "addTagsType": {
+    "tagsType": "Year 24-25"
+  },
+  "addTagsName": {
+    "tagInput": "January 31",
+    "DocumentName1": "JPG 001"
+  },
+  "uploadMore": {
+    "DocumentName1": "PPT UM08"
+  }
+}
