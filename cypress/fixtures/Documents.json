@@ -10,19 +10,27 @@
     "selectMatterInt": "LegalMatterTM",
     "selectMatterExt": "Legal-External"
   },
+  "selectDocs": {
+    "document1": " Edit79 ",
+    "documentAssert": "Edited Docuemnts 0001"
+  },
+
   "documentsAssert": {
-    "DocumentName1": "151",
-    "DocumentName2": "161"
+    "DocumentName1": "1511",
+    "DocumentName2": "231"
   },
 
   "addTagsType": {
     "tagsType": "Year 24-25"
   },
   "addTagsName": {
-    "tagInput": "January 31",
-    "DocumentName1": "JPG 001"
+    "tagInput": "Feb 02",
+    "DocumentName1": "116"
   },
   "uploadMore": {
-    "DocumentName1": "PPT UM08"
+    "DocumentName1": "PPT721"
+  },
+  "documentsEdit": {
+    "DocumentName1": "3511"
   }
 }
