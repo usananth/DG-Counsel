@@ -11,8 +11,10 @@
     "selectMatterExt": "Legal-External"
   },
   "selectDocs": {
-    "document1": " Edit79 ",
-    "documentAssert": "Edited Docuemnts 0001"
+    "document1": "Slogam456",
+    "document2": "Slogam1456",
+    "documentAssert": "Slogam1456",
+    "documentAssert1": "Slogam1234"
   },
 
   "documentsAssert": {
