@@ -29,7 +29,7 @@ describe("Documents In Departments", () => {
     Documents.SelectDeptMinus();
     // Documents.SelectInternalMatterRadioBtn();
   });
-  it("TestCase: 1.DescriptionEdit-IntMat-Upload-ViewChanges", () => {
+  it("TestCase: 1.EditName_Expdate-IntMat-Upload-ViewChanges", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn();
     Documents.DocumentNameEdit(data.editDocs.EditDoc1);
@@ -39,14 +39,14 @@ describe("Documents In Departments", () => {
     Documents.DocsNameAssert(data.editDocs.documentAssert1);
     // Documents.DocsNameAssert(data.editDocs.documentAssert2);
   });
-  it("TestCase: 2.DescriptionEdit-IntMat-Upload-Cancel", () => {
+  it("TestCase: 2.EditName_Expdate-IntMat-Upload-Cancel", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn();
     Documents.DocumentNameEdit(data.editDocs.EditDoc2);
     Documents.UploadCancelBtn();
     // Documents.DocsNameAssert(data.documentsAssert.DocumentName2);
   });
-  it("TestCase:3.DescriptionEdit-IntMat-EnaDown-ViewChanges", () => {
+  it("TestCase:3.EditName_Expdate-IntMat-EnaDown-ViewChanges", () => {
     cy.wait(2000);
     Documents.SelectMatterDropdown(intMatter);
     Documents.SelectDeptAdd();
@@ -65,14 +65,14 @@ describe("Documents In Departments", () => {
     // Documents.DocsNameAssert(data.documentsAssert.DocumentName2);
   });
 
-  it("TestCase:4.DescriptionEdit-IntMat-EnaDown-ViewChanges-Cancel", () => {
+  it("TestCase:4.EditName_Expdate-IntMat-EnaDown-ViewChanges-Cancel", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn();
     Documents.EnableDownload();
     Documents.DocumentNameEdit(data.editDocs.EditDoc4);
     Documents.UploadCancelBtn();
   });
-  it("TestCase:5.DescriptionEdit-IntMat-EnaDown-AddTags-ViewChanges", () => {
+  it("TestCase:5.EditName_Expdate-IntMat-EnaDown-AddTags-ViewChanges", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.SelectDeptAdd();
     Documents.SelectDepts(selectDepts);
@@ -86,7 +86,7 @@ describe("Documents In Departments", () => {
     Documents.DocsNameAssert(data.editDocs.documentAssert5);
     Documents.DocsNameAssert(data.editDocs.documentAssert3);
   });
-  it("TestCase:6.DescriptionEdit-IntMat-EnaDown-AddTags Cancel", () => {
+  it("TestCase:6.EditName_Expdate-IntMat-EnaDown-AddTags Cancel", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn1();
     Documents.EnableDownload();
@@ -94,7 +94,7 @@ describe("Documents In Departments", () => {
     Documents.AddTagsToDocument(addTagsType, addTagsName);
     Documents.UploadCancelBtn();
   });
-  it("TestCase:7.DescriptionEdit-IntMat-UpMore-VChanges", () => {
+  it("TestCase:7.EditName_Expdate-IntMat-UpMore-VChanges", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.SelectDeptAdd();
     Documents.SelectDepts(selectDepts);
@@ -115,7 +115,7 @@ describe("Documents In Departments", () => {
     Documents.DocsNameAssert(data.editDocs.documentAssert7);
     Documents.DocsNameAssert(data.editDocs.documentAssert6);
   });
-  it("TestCase: 8.DescriptionEdit-IntMat-UploadMore-Cancel", () => {
+  it("TestCase: 8.EditName_Expdate-IntMat-UploadMore-Cancel", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn();
     Documents.DocumentNameEdit(data.editDocs.EditDoc8);
@@ -128,7 +128,7 @@ describe("Documents In Departments", () => {
     cy.wait(2000);
     Documents.UploadCancelBtn();
   });
-  it("TestCase: 9.DescriptionEdit-IntMat-UploadMore-EnaDown-ViewChanges", () => {
+  it("TestCase: 9.EditName_Expdate-IntMat-UploadMore-EnaDown-ViewChanges", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.SelectDeptAdd();
     Documents.SelectDepts(selectDepts);
@@ -148,7 +148,7 @@ describe("Documents In Departments", () => {
     Documents.DocsNameAssert(data.editDocs.documentAssert9);
     Documents.DocsNameAssert(data.editDocs.documentAssert10);
   });
-  it("TestCase: 10.DescriptionEdit-IntMat-UploadMore-EnaDown-ViewChanges-Cancel", () => {
+  it("TestCase: 10.EditName_Expdate-IntMat-UploadMore-EnaDown-ViewChanges-Cancel", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn();
     Documents.EnableDownload();
@@ -164,7 +164,7 @@ describe("Documents In Departments", () => {
     cy.wait(2000);
     Documents.UploadCancelBtn();
   });
-  it("TestCase:11.DescriptionEdit-IntMat-EnaDown-AddTags-UpMore-VChanges", () => {
+  it("TestCase:11.EditName_Expdate-IntMat-EnaDown-AddTags-UpMore-VChanges", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.SelectDeptAdd();
     Documents.SelectDepts(selectDepts);
@@ -184,7 +184,7 @@ describe("Documents In Departments", () => {
     Documents.DocsNameAssert(data.editDocs.documentAssert12);
     Documents.DocsNameAssert(data.editDocs.documentAssert13);
   });
-  it("TestCase:12.DescriptionEdit-IntMat-EnaDown-AddTags-UpMore-VChanges-Cancel", () => {
+  it("TestCase:12.EditName_Expdate-IntMat-EnaDown-AddTags-UpMore-VChanges-Cancel", () => {
     Documents.SelectMatterDropdown(intMatter);
     // Documents.SelectDeptAdd();
     // Documents.SelectDepts(selectDepts);
@@ -204,7 +204,7 @@ describe("Documents In Departments", () => {
     Documents.UploadCancelBtn();
   });
 
-  it("TestCase: 13.DescriptionEdit-IntMat-Upload-EnaEnc-ViewChanges", () => {
+  it("TestCase: 13.EditName_Expdate-IntMat-Upload-EnaEnc-ViewChanges", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.SelectDeptAdd();
     Documents.SelectDepts(selectDepts);
@@ -218,14 +218,14 @@ describe("Documents In Departments", () => {
     Documents.DocsNameAssert(data.documentsAssert.DocumentName1);
     cy.scrollTo("top");
   });
-  it("TestCase: 14.DescriptionEdit-IntMat-Upload-EnaEnc-Cancel", () => {
+  it("TestCase: 14.EditName_Expdate-IntMat-Upload-EnaEnc-Cancel", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn();
     Documents.EnableEncryption();
     Documents.UploadCancelBtn();
     // Documents.DocsNameAssert(data.documentsAssert.DocumentName2);
   });
-  it("TestCase:15.DescriptionEdit-IntMat-EnaDown-EnaEnc-ViewChanges", () => {
+  it("TestCase:15.EditName_Expdate-IntMat-EnaDown-EnaEnc-ViewChanges", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.SelectDeptAdd();
     Documents.SelectDepts(selectDepts);
@@ -240,14 +240,14 @@ describe("Documents In Departments", () => {
     // Documents.DocsNameAssert(data.documentsAssert.DocumentName2);
   });
 
-  it("TestCase:16.DescriptionEdit-IntMat-EnaDown-EnaEnc-Cancel", () => {
+  it("TestCase:16.EditName_Expdate-IntMat-EnaDown-EnaEnc-Cancel", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn();
     Documents.EnableDownload();
     Documents.EnableEncryption();
     Documents.UploadCancelBtn();
   });
-  it("TestCase:17.DescriptionEdit-IntMat-EnaDown-EnaEnc-AddTags-ViewChanges", () => {
+  it("TestCase:17.EditName_Expdate-IntMat-EnaDown-EnaEnc-AddTags-ViewChanges", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.SelectDeptAdd();
     Documents.SelectDepts(selectDepts);
@@ -260,7 +260,7 @@ describe("Documents In Departments", () => {
     Documents.ViewChanges();
     Documents.DocsNameAssert(data.addTagsName.DocumentName1);
   });
-  it("TestCase:18.DescriptionEdit-IntMat-EnaDown-EnaEnc-AddTags Cancel", () => {
+  it("TestCase:18.EditName_Expdate-IntMat-EnaDown-EnaEnc-AddTags Cancel", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn1();
     Documents.EnableDownload();
@@ -268,7 +268,7 @@ describe("Documents In Departments", () => {
     Documents.AddTagsToDocument(addTagsType, addTagsName);
     Documents.UploadCancelBtn();
   });
-  it("TestCase:19.DescriptionEdit-IntMat-UploadMore-EnaEnc-ViewChanges", () => {
+  it("TestCase:19.EditName_Expdate-IntMat-UploadMore-EnaEnc-ViewChanges", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.SelectDeptAdd();
     Documents.SelectDepts(selectDepts);
@@ -286,7 +286,7 @@ describe("Documents In Departments", () => {
     Documents.ViewChanges();
     Documents.DocsNameAssert(data.uploadMore.DocumentName1);
   });
-  it("TestCase:20.DescriptionEdit-IntMat-EnaEnc-UploadMore-Cancel", () => {
+  it("TestCase:20.EditName_Expdate-IntMat-EnaEnc-UploadMore-Cancel", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn();
     Documents.UploadSaveBtn();
@@ -299,7 +299,7 @@ describe("Documents In Departments", () => {
     cy.wait(2000);
     Documents.UploadCancelBtn();
   });
-  it("TestCase: 21.DescriptionEdit-IntMat-UploadMore-EnaDown-EnaEnc-ViewChanges", () => {
+  it("TestCase: 21.EditName_Expdate-IntMat-UploadMore-EnaDown-EnaEnc-ViewChanges", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.SelectDeptAdd();
     Documents.SelectDepts(selectDepts);
@@ -318,7 +318,7 @@ describe("Documents In Departments", () => {
     Documents.ViewChanges();
     Documents.DocsNameAssert(data.uploadMore.DocumentName1);
   });
-  it("TestCase: 22.DescriptionEdit-IntMat-UploadMore-EnaDown-EnaEnc-ViewChanges-Cancel", () => {
+  it("TestCase: 22.EditName_Expdate-IntMat-UploadMore-EnaDown-EnaEnc-ViewChanges-Cancel", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn();
     Documents.EnableDownload();
@@ -332,7 +332,7 @@ describe("Documents In Departments", () => {
     cy.wait(2000);
     Documents.UploadCancelBtn();
   });
-  it("TestCase:23.DescriptionEdit-IntMat-EnaDown-EnaEnc-AddTags-UpMore-VChanges", () => {
+  it("TestCase:23.EditName_Expdate-IntMat-EnaDown-EnaEnc-AddTags-UpMore-VChanges", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.SelectDeptAdd();
     Documents.SelectDepts(selectDepts);
@@ -354,7 +354,7 @@ describe("Documents In Departments", () => {
     Documents.ViewChanges();
     Documents.DocsNameAssert(data.uploadMore.DocumentName1);
   });
-  it("TestCase:24.DescriptionEdit-IntMat-EnaDown-EnaEnc-AddTags-UpMore-VChanges-Cancel", () => {
+  it("TestCase:24.EditName_Expdate-IntMat-EnaDown-EnaEnc-AddTags-UpMore-VChanges-Cancel", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn();
     Documents.EnableDownload();
@@ -370,7 +370,7 @@ describe("Documents In Departments", () => {
     Documents.AddTagsToDocument(addTagsType, addTagsName);
     Documents.UploadCancelBtn();
   });
-  it("TestCase: 25.DescriptionEdit-IntMat-Upload-DisEnc-ViewChanges", () => {
+  it("TestCase: 25.EditName_Expdate-IntMat-Upload-DisEnc-ViewChanges", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.SelectDeptAdd();
     Documents.SelectDepts(selectDepts);
@@ -384,7 +384,7 @@ describe("Documents In Departments", () => {
     Documents.DocsNameAssert(data.documentsAssert.DocumentName1);
     cy.scrollTo("top");
   });
-  it("TestCase: 26.DescriptionEdit-IntMat-Upload-DisEnc-Cancel", () => {
+  it("TestCase: 26.EditName_Expdate-IntMat-Upload-DisEnc-Cancel", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn();
     Documents.DisableEncryption();
@@ -392,7 +392,7 @@ describe("Documents In Departments", () => {
     // Documents.DocsNameAssert(data.documentsAssert.DocumentName2);
   });
 
-  it("TestCase:27.DescriptionEdit-IntMat-EnaDown-DisEnc-ViewChanges", () => {
+  it("TestCase:27.EditName_Expdate-IntMat-EnaDown-DisEnc-ViewChanges", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.SelectDeptAdd();
     Documents.SelectDepts(selectDepts);
@@ -407,14 +407,14 @@ describe("Documents In Departments", () => {
     // Documents.DocsNameAssert(data.documentsAssert.DocumentName2);
   });
 
-  it("TestCase:28.DescriptionEdit-IntMat-EnaDown-DisEnc-Cancel", () => {
+  it("TestCase:28.EditName_Expdate-IntMat-EnaDown-DisEnc-Cancel", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn();
     Documents.EnableDownload();
     Documents.DisableEncryption();
     Documents.UploadCancelBtn();
   });
-  it("TestCase:29.DescriptionEdit-IntMat-DisEnc-AddTags-ViewChanges", () => {
+  it("TestCase:29.EditName_Expdate-IntMat-DisEnc-AddTags-ViewChanges", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn1();
     Documents.EnableDownload();
@@ -424,7 +424,7 @@ describe("Documents In Departments", () => {
     Documents.ViewChanges();
     Documents.DocsNameAssert(data.addTagsName.DocumentName1);
   });
-  it("TestCase:30.DescriptionEdit-IntMat-EnaDown-DisEnc-AddTags Cancel", () => {
+  it("TestCase:30.EditName_Expdate-IntMat-EnaDown-DisEnc-AddTags Cancel", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn1();
     Documents.EnableDownload();
@@ -432,7 +432,7 @@ describe("Documents In Departments", () => {
     Documents.AddTagsToDocument(addTagsType, addTagsName);
     Documents.UploadCancelBtn();
   });
-  it("TestCase:31.DescriptionEdit-IntMat-UploadMore-DisEnc-ViewChanges", () => {
+  it("TestCase:31.EditName_Expdate-IntMat-UploadMore-DisEnc-ViewChanges", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn();
     Documents.DisableEncryption();
@@ -448,7 +448,7 @@ describe("Documents In Departments", () => {
     Documents.ViewChanges();
     Documents.DocsNameAssert(data.uploadMore.DocumentName1);
   });
-  it("TestCase:32.DescriptionEdit-IntMat-DisEnc-UploadMore-Cancel", () => {
+  it("TestCase:32.EditName_Expdate-IntMat-DisEnc-UploadMore-Cancel", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn();
     Documents.DisableEncryption();
@@ -462,7 +462,7 @@ describe("Documents In Departments", () => {
     cy.wait(2000);
     Documents.UploadCancelBtn();
   });
-  it("TestCase:33.DescriptionEdit-IntMat-UploadMore-EnaDown-DisEnc-ViewChanges", () => {
+  it("TestCase:33.EditName_Expdate-IntMat-UploadMore-EnaDown-DisEnc-ViewChanges", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn();
     Documents.EnableDownload();
@@ -478,7 +478,7 @@ describe("Documents In Departments", () => {
     Documents.ViewChanges();
     Documents.DocsNameAssert(data.uploadMore.DocumentName1);
   });
-  it("TestCase:34.DescriptionEdit-IntMat-UploadMore-EnaDown-DisEnc-ViewChanges-Cancel", () => {
+  it("TestCase:34.EditName_Expdate-IntMat-UploadMore-EnaDown-DisEnc-ViewChanges-Cancel", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn();
     Documents.EnableDownload();
@@ -492,7 +492,7 @@ describe("Documents In Departments", () => {
     cy.wait(2000);
     Documents.UploadCancelBtn();
   });
-  it("TestCase:35.DescriptionEdit-IntMat-EnaDown-DisEnc-AddTags-UpMore-VChanges", () => {
+  it("TestCase:35.EditName_Expdate-IntMat-EnaDown-DisEnc-AddTags-UpMore-VChanges", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn1();
     Documents.EnableDownload();
@@ -510,7 +510,7 @@ describe("Documents In Departments", () => {
     Documents.ViewChanges();
     Documents.DocsNameAssert(data.uploadMore.DocumentName1);
   });
-  it("TestCase:36.DescriptionEdit-IntMat-EnaDown-DisEnc-AddTags-UpMore-VChanges-Cancel", () => {
+  it("TestCase:36.EditName_Expdate-IntMat-EnaDown-DisEnc-AddTags-UpMore-VChanges-Cancel", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn();
     Documents.EnableDownload();
@@ -524,7 +524,7 @@ describe("Documents In Departments", () => {
     Documents.DisableEncryption();
     Documents.UploadCancelBtn();
   });
-  it("TestCase: 37.DescriptionEdit-IntMat-EditDocsName-Upload-ViewChanges", () => {
+  it("TestCase: 37.EditName_Expdate-IntMat-EditDocsName-Upload-ViewChanges", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn();
     Documents.DocumentNameEdit(data.selectDocs.document2);
@@ -535,14 +535,14 @@ describe("Documents In Departments", () => {
     Documents.DocsNameAssert(data.selectDocs.documentAssert);
     Documents.DocsNameAssert(data.selectDocs.documentAssert1);
   });
-  it("TestCase: 38.DescriptionEdit-IntMat-EditDocsName-Upload-Cancel", () => {
+  it("TestCase: 38.EditName_Expdate-IntMat-EditDocsName-Upload-Cancel", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn();
     Documents.DocumentNameEdit(data.selectDocs.document2);
     Documents.UploadCancelBtn();
     // Documents.DocsNameAssert(data.documentsAssert.DocumentName2);
   });
-  it("TestCase:39.DescriptionEdit-IntMat-EditDocsName-EnaDown-ViewChanges", () => {
+  it("TestCase:39.EditName_Expdate-IntMat-EditDocsName-EnaDown-ViewChanges", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn();
     Documents.EnableDownload();
@@ -556,13 +556,13 @@ describe("Documents In Departments", () => {
     // Documents.DocsNameAssert(data.documentsAssert.DocumentName2);
   });
 
-  it("TestCase:40.DescriptionEdit-IntMat-EditDocsName-EnaDown-ViewChanges-Cancel", () => {
+  it("TestCase:40.EditName_Expdate-IntMat-EditDocsName-EnaDown-ViewChanges-Cancel", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn();
     Documents.DocumentNameEdit(data.selectDocs.document2);
     Documents.UploadCancelBtn();
   });
-  it("TestCase:41.DescriptionEdit-IntMat-EnaDown-EditDocsName-AddTags-ViewChanges", () => {
+  it("TestCase:41.EditName_Expdate-IntMat-EnaDown-EditDocsName-AddTags-ViewChanges", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn();
     Documents.EnableDownload();
@@ -573,7 +573,7 @@ describe("Documents In Departments", () => {
     Documents.DocsNameAssert(data.selectDocs.documentAssert);
     Documents.DocsNameAssert(data.selectDocs.documentAssert1);
   });
-  it("TestCase:42.DescriptionEdit-IntMat-EnaDown-EditDocsName-AddTags Cancel", () => {
+  it("TestCase:42.EditName_Expdate-IntMat-EnaDown-EditDocsName-AddTags Cancel", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn();
     Documents.EnableDownload();
@@ -581,7 +581,7 @@ describe("Documents In Departments", () => {
     Documents.AddTagsToDocument(addTagsType, addTagsName);
     Documents.UploadCancelBtn();
   });
-  it("TestCase:43.DescriptionEdit-IntMat-EditDocsName-UpMore-VChanges", () => {
+  it("TestCase:43.EditName_Expdate-IntMat-EditDocsName-UpMore-VChanges", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn();
     Documents.UploadSaveBtn();
@@ -596,7 +596,7 @@ describe("Documents In Departments", () => {
     Documents.ViewChanges();
     Documents.DocsNameAssert(data.uploadMore.DocumentName1);
   });
-  it("TestCase: 44.DescriptionEdit-IntMat-EditDocsName-UploadMore-Cancel", () => {
+  it("TestCase: 44.EditName_Expdate-IntMat-EditDocsName-UploadMore-Cancel", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn();
     Documents.UploadSaveBtn();
@@ -609,7 +609,7 @@ describe("Documents In Departments", () => {
     cy.wait(2000);
     Documents.UploadCancelBtn();
   });
-  it("TestCase: 45.DescriptionEdit-IntMat-UploadMore-EnaDown-ViewChanges", () => {
+  it("TestCase: 45.EditName_Expdate-IntMat-UploadMore-EnaDown-ViewChanges", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn();
     Documents.EnableDownload();
@@ -624,7 +624,7 @@ describe("Documents In Departments", () => {
     Documents.DocsNameAssert(data.selectDocs.documentAssert1);
     Documents.DocsNameAssert(data.selectDocs.documentAssert2);
   });
-  it("TestCase: 46.DescriptionEdit-IntMat-UploadMore-EnaDown-ViewChanges-Cancel", () => {
+  it("TestCase: 46.EditName_Expdate-IntMat-UploadMore-EnaDown-ViewChanges-Cancel", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn();
     Documents.EnableDownload();
@@ -636,7 +636,7 @@ describe("Documents In Departments", () => {
     cy.wait(2000);
     Documents.UploadCancelBtn();
   });
-  it("TestCase:47.DescriptionEdit-IntMat-EnaDown-AddTags-UpMore-VChanges", () => {
+  it("TestCase:47.EditName_Expdate-IntMat-EnaDown-AddTags-UpMore-VChanges", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn1();
     Documents.EnableDownload();
@@ -652,7 +652,7 @@ describe("Documents In Departments", () => {
     Documents.DocsNameAssert(data.selectDocs.documentAssert1);
     Documents.DocsNameAssert(data.selectDocs.documentAssert2);
   });
-  it("TestCase:48.DescriptionEdit-IntMat-EnaDown-AddTags-UpMore-VChanges-Cancel", () => {
+  it("TestCase:48.EditName_Expdate-IntMat-EnaDown-AddTags-UpMore-VChanges-Cancel", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn1();
     Documents.EnableDownload();
@@ -668,7 +668,7 @@ describe("Documents In Departments", () => {
     Documents.AddTagsToDocument(addTagsType, addTagsName);
     Documents.UploadCancelBtn();
   });
-  it("TestCase: 49.DescriptionEdit-IntMat-Upload-EnaEnc-ViewChanges", () => {
+  it("TestCase: 49.EditName_Expdate-IntMat-Upload-EnaEnc-ViewChanges", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn();
     Documents.EnableEncryption();
@@ -679,14 +679,14 @@ describe("Documents In Departments", () => {
     Documents.DocsNameAssert(data.documentsAssert.DocumentName1);
     cy.scrollTo("top");
   });
-  it("TestCase: 50.DescriptionEdit-IntMat-Upload-EnaEnc-Cancel", () => {
+  it("TestCase: 50.EditName_Expdate-IntMat-Upload-EnaEnc-Cancel", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn();
     Documents.EnableEncryption();
     Documents.UploadCancelBtn();
     // Documents.DocsNameAssert(data.documentsAssert.DocumentName2);
   });
-  it("TestCase:51.DescriptionEdit-IntMat-EnaDown-EnaEnc-ViewChanges", () => {
+  it("TestCase:51.EditName_Expdate-IntMat-EnaDown-EnaEnc-ViewChanges", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.SelectDeptAdd();
     Documents.SelectDepts(selectDepts);
@@ -701,14 +701,14 @@ describe("Documents In Departments", () => {
     // Documents.DocsNameAssert(data.documentsAssert.DocumentName2);
   });
 
-  it("TestCase:52.DescriptionEdit-IntMat-EnaDown-EnaEnc-Cancel", () => {
+  it("TestCase:52.EditName_Expdate-IntMat-EnaDown-EnaEnc-Cancel", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn();
     Documents.EnableDownload();
     Documents.EnableEncryption();
     Documents.UploadCancelBtn();
   });
-  it("TestCase:53.DescriptionEdit-IntMat-EnaDown-EnaEnc-AddTags-ViewChanges", () => {
+  it("TestCase:53.EditName_Expdate-IntMat-EnaDown-EnaEnc-AddTags-ViewChanges", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn1();
     Documents.EnableDownload();
@@ -718,7 +718,7 @@ describe("Documents In Departments", () => {
     Documents.ViewChanges();
     Documents.DocsNameAssert(data.addTagsName.DocumentName1);
   });
-  it("TestCase:54.DescriptionEdit-IntMat-EnaDown-EnaEnc-AddTags Cancel", () => {
+  it("TestCase:54.EditName_Expdate-IntMat-EnaDown-EnaEnc-AddTags Cancel", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn1();
     Documents.EnableDownload();
@@ -726,7 +726,7 @@ describe("Documents In Departments", () => {
     Documents.AddTagsToDocument(addTagsType, addTagsName);
     Documents.UploadCancelBtn();
   });
-  it("TestCase:55.DescriptionEdit-IntMat-UploadMore-EnaEnc-ViewChanges", () => {
+  it("TestCase:55.EditName_Expdate-IntMat-UploadMore-EnaEnc-ViewChanges", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn();
     Documents.UploadSaveBtn();
@@ -741,7 +741,7 @@ describe("Documents In Departments", () => {
     Documents.ViewChanges();
     Documents.DocsNameAssert(data.uploadMore.DocumentName1);
   });
-  it("TestCase:56.DescriptionEdit-IntMat-EnaEnc-UploadMore-Cancel", () => {
+  it("TestCase:56.EditName_Expdate-IntMat-EnaEnc-UploadMore-Cancel", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn();
     Documents.UploadSaveBtn();
@@ -754,7 +754,7 @@ describe("Documents In Departments", () => {
     cy.wait(2000);
     Documents.UploadCancelBtn();
   });
-  it("TestCase: 57.DescriptionEdit-IntMat-UploadMore-EnaDown-EnaEnc-ViewChanges", () => {
+  it("TestCase: 57.EditName_Expdate-IntMat-UploadMore-EnaDown-EnaEnc-ViewChanges", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn();
     Documents.EnableDownload();
@@ -770,7 +770,7 @@ describe("Documents In Departments", () => {
     Documents.ViewChanges();
     Documents.DocsNameAssert(data.uploadMore.DocumentName1);
   });
-  it("TestCase: 58.DescriptionEdit-IntMat-UploadMore-EnaDown-EnaEnc-ViewChanges-Cancel", () => {
+  it("TestCase: 58.EditName_Expdate-IntMat-UploadMore-EnaDown-EnaEnc-ViewChanges-Cancel", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn();
     Documents.EnableDownload();
@@ -784,7 +784,7 @@ describe("Documents In Departments", () => {
     cy.wait(2000);
     Documents.UploadCancelBtn();
   });
-  it("TestCase:59.DescriptionEdit-IntMat-EnaDown-EnaEnc-AddTags-UpMore-VChanges", () => {
+  it("TestCase:59.EditName_Expdate-IntMat-EnaDown-EnaEnc-AddTags-UpMore-VChanges", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn1();
     Documents.EnableDownload();
@@ -803,7 +803,7 @@ describe("Documents In Departments", () => {
     Documents.ViewChanges();
     Documents.DocsNameAssert(data.uploadMore.DocumentName1);
   });
-  it("TestCase:60.DescriptionEdit-IntMat-EnaDown-EnaEnc-AddTags-UpMore-VChanges-Cancel", () => {
+  it("TestCase:60.EditName_Expdate-IntMat-EnaDown-EnaEnc-AddTags-UpMore-VChanges-Cancel", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn();
     Documents.EnableDownload();
@@ -819,7 +819,7 @@ describe("Documents In Departments", () => {
     Documents.AddTagsToDocument(addTagsType, addTagsName);
     Documents.UploadCancelBtn();
   });
-  it("TestCase: 61.DescriptionEdit-IntMat-Upload-DisEnc-ViewChanges", () => {
+  it("TestCase: 61.EditName_Expdate-IntMat-Upload-DisEnc-ViewChanges", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn();
     Documents.DisableEncryption();
@@ -830,14 +830,14 @@ describe("Documents In Departments", () => {
     Documents.DocsNameAssert(data.documentsAssert.DocumentName1);
     cy.scrollTo("top");
   });
-  it("TestCase: 62.DescriptionEdit-IntMat-Upload-DisEnc-Cancel", () => {
+  it("TestCase: 62.EditName_Expdate-IntMat-Upload-DisEnc-Cancel", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn();
     Documents.DisableEncryption();
     Documents.UploadCancelBtn();
     // Documents.DocsNameAssert(data.documentsAssert.DocumentName2);
   });
-  it("TestCase:63.DescriptionEdit-IntMat-EnaDown-DisEnc-ViewChanges", () => {
+  it("TestCase:63.EditName_Expdate-IntMat-EnaDown-DisEnc-ViewChanges", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.SelectDeptAdd();
     Documents.SelectDepts(selectDepts);
@@ -852,14 +852,14 @@ describe("Documents In Departments", () => {
     // Documents.DocsNameAssert(data.documentsAssert.DocumentName2);
   });
 
-  it("TestCase:64.DescriptionEdit-IntMat-EnaDown-DisEnc-Cancel", () => {
+  it("TestCase:64.EditName_Expdate-IntMat-EnaDown-DisEnc-Cancel", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn();
     Documents.EnableDownload();
     Documents.DisableEncryption();
     Documents.UploadCancelBtn();
   });
-  it("TestCase:65.DescriptionEdit-IntMat-DisEnc-AddTags-ViewChanges", () => {
+  it("TestCase:65.EditName_Expdate-IntMat-DisEnc-AddTags-ViewChanges", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn1();
     Documents.EnableDownload();
@@ -869,7 +869,7 @@ describe("Documents In Departments", () => {
     Documents.ViewChanges();
     Documents.DocsNameAssert(data.addTagsName.DocumentName1);
   });
-  it("TestCase:66.DescriptionEdit-IntMat-EnaDown-DisEnc-AddTags Cancel", () => {
+  it("TestCase:66.EditName_Expdate-IntMat-EnaDown-DisEnc-AddTags Cancel", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn1();
     Documents.EnableDownload();
@@ -877,7 +877,7 @@ describe("Documents In Departments", () => {
     Documents.AddTagsToDocument(addTagsType, addTagsName);
     Documents.UploadCancelBtn();
   });
-  it("TestCase:67.DescriptionEdit-IntMat-UploadMore-DisEnc-ViewChanges", () => {
+  it("TestCase:67.EditName_Expdate-IntMat-UploadMore-DisEnc-ViewChanges", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn();
     Documents.DisableEncryption();
@@ -893,7 +893,7 @@ describe("Documents In Departments", () => {
     Documents.ViewChanges();
     Documents.DocsNameAssert(data.uploadMore.DocumentName1);
   });
-  it("TestCase:68.DescriptionEdit-IntMat-DisEnc-UploadMore-Cancel", () => {
+  it("TestCase:68.EditName_Expdate-IntMat-DisEnc-UploadMore-Cancel", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn();
     Documents.DisableEncryption();
@@ -907,7 +907,7 @@ describe("Documents In Departments", () => {
     cy.wait(2000);
     Documents.UploadCancelBtn();
   });
-  it("TestCase:69.DescriptionEdit-IntMat-UploadMore-EnaDown-DisEnc-ViewChanges", () => {
+  it("TestCase:69.EditName_Expdate-IntMat-UploadMore-EnaDown-DisEnc-ViewChanges", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn();
     Documents.EnableDownload();
@@ -923,7 +923,7 @@ describe("Documents In Departments", () => {
     Documents.ViewChanges();
     Documents.DocsNameAssert(data.uploadMore.DocumentName1);
   });
-  it("TestCase:70.DescriptionEdit-IntMat-UploadMore-EnaDown-DisEnc-ViewChanges-Cancel", () => {
+  it("TestCase:70.EditName_Expdate-IntMat-UploadMore-EnaDown-DisEnc-ViewChanges-Cancel", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn();
     Documents.EnableDownload();
@@ -937,7 +937,7 @@ describe("Documents In Departments", () => {
     cy.wait(2000);
     Documents.UploadCancelBtn();
   });
-  it("TestCase:71.DescriptionEdit-IntMat-EnaDown-DisEnc-EditDocName-AddTags-UpMore-VChanges", () => {
+  it("TestCase:71.EditName_Expdate-IntMat-EnaDown-DisEnc-EditDocName-AddTags-UpMore-VChanges", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn1();
     Documents.EnableDownload();
@@ -954,7 +954,7 @@ describe("Documents In Departments", () => {
     Documents.ViewChanges();
     Documents.DocsNameAssert(data.uploadMore.DocumentName1);
   });
-  it("TestCase:72.DescriptionEdit-IntMat-EnaDown-DisEnc-AddTags-UpMore-VChanges-Cancel", () => {
+  it("TestCase:72.EditName_Expdate-IntMat-EnaDown-DisEnc-AddTags-UpMore-VChanges-Cancel", () => {
     Documents.SelectMatterDropdown(intMatter);
     Documents.ClickBrowseBtn();
     Documents.EnableDownload();

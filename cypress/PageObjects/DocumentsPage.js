@@ -243,35 +243,24 @@ class DocumentsUpload {
       this.WebElements.UploadSave().click({ force: true });
     }
   }
-
-  // NewDocsEdits(selectDocuments) {
-  //   for (let i = 0; i < selectDocuments.length; i++) {
-  //     cy.xpath(
-  //       " //div[text()='" +
-  //         selectDocuments[i] +
-  //         "'] //following::div//td//i[@class='fa fa-edit']"
-  //     ).each(($EditBtn, $index) => {
-  //       cy.wrap($EditBtn).click({ force: true });
-  //       cy.wait(1000);
-  //       DocEdits.forEach((EData) => {
-  //         cy.scrollTo("bottom");
-  //         cy.get("#documentName").clear({ force: true }).type(EData.DName);
-  //         this.WebElements.UploadSave().click({ force: true });
-  //         //cy.wait(1000);
-  //         // cy.get(":nth-child(2) > .form-group > .form-control")
-  //         //   .clear({
-  //         //     force: true,
-  //         //   })
-  //         //   .type(EData.des);
-  //         // cy.wait(1000);
-  //         // cy.get(".mat-datepicker-input").clear({ force: true }).type(EData.ed);
-  //         // cy.wait(1000);
-  //         // cy.get(".btnsave").click({ force: true });
-  //       });
-  //     });
-  //     //  this.WebElements.UploadSave().click({ force: true });
-  //   }
-  // }
+  EditDocumentDescriptionOnly(selectDocuments) {
+    for (let i = 0; i < selectDocuments.length; i++) {
+      DocEdits.forEach((EData) => {
+        cy.xpath(
+          "//div[text()='" +
+            selectDocuments[i] +
+            "'] //following::div//td//i[@class='fa fa-edit']"
+        ).click({ multiple: true });
+        cy.scrollTo("bottom");
+        cy.wait(1000);
+        cy.get("#documentName").clear({ force: true }).type(EData.DName);
+        cy.wait(1000);
+        cy.get(".btnsave").click({ force: true });
+        cy.wait(2000);
+      });
+      this.WebElements.UploadSave().click({ force: true });
+    }
+  }
 
   // AddTagsEdits(tagsType, tagName) {
   //   this.AddTags();
