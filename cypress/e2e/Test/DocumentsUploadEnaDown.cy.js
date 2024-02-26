@@ -22,7 +22,6 @@ describe("Documents In Departments", () => {
     Documents.SelectDeptAdd();
     Documents.SelectDepts(selectDepts);
     Documents.SelectDeptMinus();
-    // Documents.SelectInternalMatterRadioBtn();
   });
   it("TestCase: 1.Documents-IntMat-Upload-ViewChanges", () => {
     Documents.SelectMatterDropdown(data.selectDepartments.selectMatterInt);
@@ -38,7 +37,6 @@ describe("Documents In Departments", () => {
     Documents.SelectMatterDropdown(data.selectDepartments.selectMatterInt);
     Documents.ClickBrowseBtn();
     Documents.UploadCancelBtn();
-    // Documents.DocsNameAssert(data.documentsAssert.DocumentName2);
   });
   it("TestCase:3.Documents-IntMat-EnaDown-ViewChanges", () => {
     Documents.SelectMatterDropdown(data.selectDepartments.selectMatterInt);
@@ -48,8 +46,6 @@ describe("Documents In Departments", () => {
     Documents.ViewChanges();
     cy.wait(2000);
     Documents.DocsNameAssert(data.documentsAssert.DocumentName3);
-
-    // Documents.DocsNameAssert(data.documentsAssert.DocumentName2);
   });
 
   it("TestCase:4.Documents-IntMat-EnaDown-ViewChanges-Cancel", () => {
@@ -181,7 +177,6 @@ describe("Documents In Departments", () => {
     Documents.ClickBrowseBtn();
     Documents.EnableEncryption();
     Documents.UploadCancelBtn();
-    // Documents.DocsNameAssert(data.documentsAssert.DocumentName2);
   });
   it("TestCase:15.Documents-IntMat-EnaDown-EnaEnc-ViewChanges", () => {
     Documents.SelectMatterDropdown(data.selectDepartments.selectMatterInt);
@@ -195,7 +190,6 @@ describe("Documents In Departments", () => {
     cy.wait(2000);
     Documents.ViewChanges();
     Documents.DocsNameAssert(data.documentsAssert.DocumentName2);
-    // Documents.DocsNameAssert(data.documentsAssert.DocumentName2);
   });
 
   it("TestCase:16.Documents-IntMat-EnaDown-EnaEnc-Cancel", () => {
