@@ -92,22 +92,19 @@ class DocumentsUpload {
   }
   ClickBrowseBtn() {
     cy.wait(1000);
-    cy.get('[type="file"]').attachFile(
-      ["FinalTest7.pdf", "Slogam124.png", "Second3.jpg"],
-      {
-        force: true,
-      }
-    );
+    cy.get('[type="file"]').attachFile(["45TC11.jpg", "TC46.ppt"], {
+      force: true,
+    });
   }
   ClickBrowseBtn1() {
     cy.wait(1000);
-    cy.get('[type="file"]').attachFile(["Edit75.jpg", "Edit76.pdf"], {
+    cy.get('[type="file"]').attachFile(["48A.jpg", "XPath11.pdf"], {
       force: true,
     });
   }
   ClickBrowseBtnUploadMore() {
     cy.wait(1000);
-    cy.get('[type="file"]').attachFile(["PNG  7122.png", "PPT721.ppt"], {
+    cy.get('[type="file"]').attachFile(["47A1.docx", "45TCUM.jpg"], {
       force: true,
     });
   }
@@ -156,9 +153,11 @@ class DocumentsUpload {
   }
   AddTagsToDocument(tagsType, tagName) {
     this.AddTagsBtn();
-    cy.xpath("//td //input[@type='checkbox']").click({ multiple: true });
+    // cy.xpath("//td //input[@type='checkbox']").click({ multiple: true });
+    cy.get(".inputEl").click();
     cy.wait(2000);
     cy.scrollTo("bottom");
+    cy.wait(2000);
     cy.get(":nth-child(1) > .form-group > #caseType").clear().type(tagsType);
     cy.get(":nth-child(2) > .form-group > #caseType").clear().type(tagName);
     this.WebElements.AddTagSaveBtn().click();
@@ -188,7 +187,7 @@ class DocumentsUpload {
   }
   ViewChanges() {
     this.WebElements.ViewChange().click({ force: true });
-    cy.scrollTo(0, 300);
+    cy.scrollTo(0, 300, { ensureScrollable: false });
   }
   UploadMoreBtn() {
     this.WebElements.UploadMore().click({ force: true });
@@ -286,7 +285,7 @@ class DocumentsUpload {
   // }
 
   // }
-  DocumentsEdits(DocName, DocDesc, DocExpiry) {
+  DocumentNameEdit(DocName) {
     cy.get(".fa.fa-edit").each(($element, $index, $list) => {
       cy.wrap($element).click();
       cy.wait(1000);
@@ -300,7 +299,7 @@ class DocumentsUpload {
       cy.wait(1000);
       this.DocEditSaveBtn();
     });
-    this.WebElements.UploadSave().click();
+    //  this.WebElements.UploadSave().click();
   }
 
   // DocumentsEdits(intArray, des) {
