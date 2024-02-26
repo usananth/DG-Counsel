@@ -1,19 +1,6 @@
 import "cypress-file-upload";
 const DocEdits = require("../fixtures/DocJson.json");
-// const EditData = [
-//   {
-//     name: "EditDoc0502",
-//     des: "Description One 01",
-//     ed: "5/4/2024",
-//   },
-//   {
-//     name: "EditDoc0502",
-//     des: "Description One 02",
-//     ed: "5/6/2024",
-//   },
-// ];
-
-class DocumentsUpload {
+class DocumentsPage {
   WebElements = {
     DocsMenu: () =>
       cy.get(":nth-child(3) > .left-menu-icon > .iconlink > .mattersicon"),
@@ -52,19 +39,21 @@ class DocumentsUpload {
     AssertDocs: () => cy.xpath("//tr//td[1]"),
     AssertDesc: () => cy.xpath("//tbody/tr[1]/td[2]"),
   };
-
+  // Documents Menu
   DocsMenuClick() {
     cy.wait(2000);
     this.WebElements.DocsMenu().click({ force: true });
   }
+  //Upload Tab
   UploadTabClick() {
     cy.wait(2000);
     this.WebElements.UploadTab().click({ force: true });
   }
+  //Select Dept Plus
   SelectDeptAdd() {
     this.WebElements.SelectDept().click({ force: true });
   }
-
+  // Select the Department from list
   SelectDepts(deptSelect) {
     for (let i = 0; i < deptSelect.length; i++) {
       cy.xpath(
@@ -72,88 +61,95 @@ class DocumentsUpload {
       ).click({ force: true });
     }
   }
-
+  //Select Department Minus
   SelectDeptMinus() {
     cy.scrollTo("top");
     this.WebElements.DeptMinus().click({ force: true });
   }
+  // Select the Internal Matter Radio Button
   SelectInternalMatterRadioBtn() {
     this.WebElements.SelectIntMatRadioBtn().click();
   }
+  // Select the External Matter Radio Button
   SelectExternalMatterRadioBtn() {
     this.WebElements.SelectExtMatRadioBtn().click();
   }
+  //Select the Internal Matter
   SelectMatterDropdown(intMatterSelect) {
     cy.get("select.textbox").select(intMatterSelect);
   }
+  //Select the External Matter
   selectMatterDropdown(extMatterSelect) {
     cy.get("select.textbox").select(extMatterSelect);
-    cy.wait(1000);
   }
+  //Select Documents Browse Button
   ClickBrowseBtn() {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile(["Document1.jpg", "Object2.jpg"], {
+      force: true,
+    });
+  }
+  //Select Documents Browse Button
+  ClickBrowseBtn007() {
     cy.wait(1000);
     cy.get('[type="file"]').attachFile(["45TC11.jpg", "TC46.ppt"], {
       force: true,
     });
   }
+  //Select Documents Browse Button
   ClickBrowseBtn1() {
     cy.wait(1000);
     cy.get('[type="file"]').attachFile(["48A.jpg", "XPath11.pdf"], {
       force: true,
     });
   }
+  //Select Documents Browse Button for Upload More
   ClickBrowseBtnUploadMore() {
     cy.wait(1000);
     cy.get('[type="file"]').attachFile(["47A1.docx", "45TCUM.jpg"], {
       force: true,
     });
   }
+  // Enable Download Radio Button
   EnableDownload() {
     this.WebElements.EnableDown().click({ force: true });
   }
+  // Disable Download Radio Button
   DisableDownload() {
     this.WebElements.DisableDown().click();
   }
+  // AddTag Radio button
   AddTagsBtn() {
     cy.get('[for="btnradio4"]').click();
   }
-  ATFirstOne() {
-    this.WebElements.ATFirst().click({ force: true });
-  }
-  ATSecondOne() {
-    this.WebElements.ATSecond().click();
-    //   cy.scrollTo("bottom");
-  }
+  //Add Tag tag type input
   Tagtypes(tagType) {
     this.WebElements.TagType(tagType);
   }
+  //Add Tag Input type
   TagsInputs(tagsInput) {
     this.WebElements.TagsInput(tagsInput);
   }
+  //Add Tags for All Documents
   SelectAllTags() {
     this.WebElements.ATSelectAll().click();
   }
-  UpSaveDisable() {
-    cy.get(".btnsave", {
-      timeout: 10000,
-    })
-      .should("be.enabled")
-      .click();
-  }
-
+  // Enable Ecryption Radio Button
   EnableEncryption() {
     this.WebElements.EnableEncrypt().click();
   }
+  // Disable Ecryption Radio Button
   DisableEncryption() {
     this.WebElements.DisableEncrypt().click();
   }
+  //Add Tags Radio Button
   AddTags() {
     this.WebElements.AddTags().click();
     cy.scrollTo("bottom");
   }
+  //Add Tags to Each Documents
   AddTagsToDocument(tagsType, tagName) {
     this.AddTagsBtn();
-    // cy.xpath("//td //input[@type='checkbox']").click({ multiple: true });
     cy.get(".inputEl").click();
     cy.wait(2000);
     cy.scrollTo("bottom");
@@ -162,149 +158,120 @@ class DocumentsUpload {
     cy.get(":nth-child(2) > .form-group > #caseType").clear().type(tagName);
     this.WebElements.AddTagSaveBtn().click();
   }
-  DocumentName(renameDocs) {
-    cy.scrollTo("bottom");
-    cy.get("#documentName").clear().type(renameDocs);
-  }
-  DescriptionChange(editDesc) {
-    cy.get(":nth-child(2) > .form-group > .form-control")
-      .clear()
-      .type(editDesc);
-  }
-  DatepickerSelection(expDate) {
-    cy.get("#mat-input-0").clear().type(expDate);
-  }
-
+  //Document Edit Save Button
   DocEditSaveBtn() {
     this.WebElements.DocsEditSave().click();
   }
-
+  //Upload Save Button
   UploadSaveBtn() {
     this.WebElements.UploadSave().click({ force: true });
   }
+  //Upload Cancel Button
   UploadCancelBtn() {
     this.WebElements.UploadCancel().click({ force: true });
   }
+  //View Changes Button
   ViewChanges() {
     this.WebElements.ViewChange().click({ force: true });
     cy.scrollTo(0, 300, { ensureScrollable: false });
   }
+  //Upload More Button
   UploadMoreBtn() {
     this.WebElements.UploadMore().click({ force: true });
   }
-
+  //Document Name Assert
   DocsNameAssert(docsAssert) {
     this.WebElements.AssertDocs().should("contain", docsAssert);
   }
+  //Description Change Assert
   DescChangesAssert(descAssert) {
     this.WebElements.AssertDesc().should("contain", descAssert);
   }
 
-  EditDocumentSelect(selectDocuments) {
-    for (let i = 0; i < selectDocuments.length; i++) {
-      DocEdits.forEach((EData) => {
-        cy.xpath(
-          "//div[text()='" +
-            selectDocuments[i] +
-            "'] //following::div//td//i[@class='fa fa-edit']"
-        ).click({ multiple: true });
-        cy.scrollTo("bottom");
-        cy.get("#documentName").clear().type(EData.DName);
-        cy.get(":nth-child(2) > .form-group > .form-control")
-          .clear({
-            force: true,
-          })
-          .type(EData.DDesc);
-        cy.get(".mat-datepicker-input")
-          .clear({ force: true })
-          .type(EData.Edate);
-        cy.wait(1000);
-        cy.get(".btnsave").click({ force: true });
-      });
-      this.WebElements.UploadSave().click({ force: true });
-    }
-    //this.WebElements.UploadSave().click({ force: true });
-  }
-  EditDocumentNameOnly(selectDocuments) {
-    for (let i = 0; i < selectDocuments.length; i++) {
-      DocEdits.forEach((EData) => {
-        cy.xpath(
-          "//div[text()='" +
-            selectDocuments[i] +
-            "'] //following::div//td//i[@class='fa fa-edit']"
-        ).click({ multiple: true });
-        cy.scrollTo("bottom");
-        cy.wait(1000);
-        cy.get("#documentName").clear({ force: true }).type(EData.DName);
-        cy.wait(1000);
-        cy.get(".btnsave").click({ force: true });
-        cy.wait(2000);
-      });
-      this.WebElements.UploadSave().click({ force: true });
-    }
-  }
-  EditDocumentDescriptionOnly(selectDocuments) {
-    for (let i = 0; i < selectDocuments.length; i++) {
-      DocEdits.forEach((EData) => {
-        cy.xpath(
-          "//div[text()='" +
-            selectDocuments[i] +
-            "'] //following::div//td//i[@class='fa fa-edit']"
-        ).click({ multiple: true });
-        cy.scrollTo("bottom");
-        cy.wait(1000);
-        cy.get("#documentName").clear({ force: true }).type(EData.DName);
-        cy.wait(1000);
-        cy.get(".btnsave").click({ force: true });
-        cy.wait(2000);
-      });
-      this.WebElements.UploadSave().click({ force: true });
-    }
-  }
-
-  // AddTagsEdits(tagsType, tagName) {
-  //   this.AddTags();
-  //   cy.xpath("//td //input[@type='checkbox']").each(($Chkbox, $index) => {
-  //     cy.wait(3000);
-  //     cy.wrap($Chkbox).click({ force: true });
-  //     cy.get(":nth-child(1) > .form-group > #caseType").type(tagsType);
-  //     cy.get(":nth-child(2) > .form-group > #caseType").type(tagName);
-  //     this.WebElements.AddTagSaveBtn().click();
-  //   });
-  // }
-
-  // }
   DocumentNameEdit(DocName) {
     cy.get(".fa.fa-edit").each(($element, $index, $list) => {
       cy.wrap($element).click();
       cy.wait(1000);
       cy.scrollTo("bottom");
       cy.get("#documentName").clear().type(DocName);
-      // cy.get(":nth-child(2) > .form-group > .form-control")
-      //   .clear()
-      //   .type(DocDesc);
-      // cy.get(":nth-child(2) > .form-group > .form-control");
-      // cy.get("#mat-input-0").clear().type(DocExpiry);
       cy.wait(1000);
       this.DocEditSaveBtn();
     });
     //  this.WebElements.UploadSave().click();
   }
+  DocumentDescriptionEdit(DescEdit) {
+    cy.get(".fa.fa-edit").each(($element, $index, $list) => {
+      cy.wrap($element).click();
+      cy.wait(1000);
+      cy.scrollTo("bottom");
+      cy.get(":nth-child(2) > .form-group > .form-control")
+        .clear({
+          force: true,
+        })
+        .clear()
+        .type(DescEdit);
+      cy.wait(1000);
+      this.DocEditSaveBtn();
+    });
+    //  this.WebElements.UploadSave().click();
+  }
+  DocumentExpDateEdit(ExpDate) {
+    cy.get(".fa.fa-edit").each(($element, $index, $list) => {
+      cy.wrap($element).click();
+      cy.wait(1000);
+      cy.scrollTo("bottom");
+      cy.get(".mat-datepicker-input").clear({ force: true }).type(ExpDate);
+      cy.wait(1000);
+      this.DocEditSaveBtn();
+    });
+    //  this.WebElements.UploadSave().click();
+  }
+  DocsNameandDescriptionEdit(DocName, DocDesc) {
+    cy.get(".fa.fa-edit").each(($element, $index, $list) => {
+      cy.wrap($element).click();
+      cy.wait(1000);
+      cy.scrollTo("bottom");
+      cy.get("#documentName").clear().type(DocName);
+      cy.wait(1000);
+      cy.get(":nth-child(2) > .form-group > .form-control")
+        .clear({
+          force: true,
+        })
+        .clear()
+        .type(DocDesc);
+      this.DocEditSaveBtn();
+    });
+  }
+  DocsNameandExpDate(DocName, ExpDate) {
+    cy.get(".fa.fa-edit").each(($element, $index, $list) => {
+      cy.wrap($element).click();
+      cy.wait(1000);
+      cy.scrollTo("bottom");
+      cy.get("#documentName").clear().type(DocName);
+      cy.wait(1000);
+      cy.get(".mat-datepicker-input").clear({ force: true }).type(ExpDate);
+      cy.wait(1000);
+      this.DocEditSaveBtn();
+    });
+  }
 
-  // DocumentsEdits(intArray, des) {
-  //   //   function editAllField(intArray, des) {
-  //   let jj = 0;
-  //   for (jj = 0; jj < intArray.length; jj++) {
-  //     let eb = intArray[jj];
-
-  //     DocsEdit = [eb].click();
-
-  //     cy.scrollTo("bottom");
-  //     cy.wait(2000);
-  //     // editAllFields(des[eb][0], des[eb][1], des[eb][2]);
-  //     this.DocumentEditAllFields(des[eb][0], des[eb][1], des[eb][2]);
-  //   }
-  // }
+  DocsNameandDescripitonExpdateEdit(DocName, DocDesc, ExpDate) {
+    cy.get(".fa.fa-edit").each(($element, $index, $list) => {
+      cy.wrap($element).click();
+      cy.wait(1000);
+      cy.scrollTo("bottom");
+      cy.get("#documentName").clear().type(DocName);
+      cy.wait(1000);
+      cy.get(":nth-child(2) > .form-group > .form-control")
+        .clear({
+          force: true,
+        })
+        .clear()
+        .type(DocDesc);
+      cy.wait(1000);
+      cy.get(".mat-datepicker-input").clear({ force: true }).type(ExpDate);
+      this.DocEditSaveBtn();
+    });
+  }
 }
-
-export default DocumentsUpload;
+module.exports = new DocumentsPage();

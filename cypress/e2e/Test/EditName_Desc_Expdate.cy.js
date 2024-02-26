@@ -1,19 +1,17 @@
-import DocumentsUpload from "../../PageObjects/DocumentsPage";
-import Login from "../../PageObjects/LoginPage";
-const Documents = new DocumentsUpload();
-const login = new Login();
 import "cypress-file-upload";
+import Documents from "../../PageObjects/DocumentsPage";
+import Login from "../../PageObjects/LoginPage";
 describe("Documents In Departments", () => {
   var data;
   var selectDepts, intMatter, extMatter, addTagsType, addTagsName;
 
   before(() => {
-    login.visit();
+    Login.visit();
     cy.fixture("Documents").then((value) => {
       data = value;
-      login.userName(data.loginData.inputmail);
-      login.userPassword(data.loginData.inputpassword);
-      login.submitBtn();
+      Login.userName(data.loginData.inputmail);
+      Login.userPassword(data.loginData.inputpassword);
+      Login.submitBtn();
     });
   });
   beforeEach(() => {

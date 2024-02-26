@@ -10,6 +10,12 @@
     "selectMatterInt": "LegalMatterInternal",
     "selectMatterExt": "Legal-External"
   },
+  "DocumentNameAssert": {
+    "Doc1": "Object1",
+    "Doc2": "Object2",
+    "EditDoc3": "NameEdited3",
+    "EditDoc4": "NameEdited4"
+  },
   "editDocumentName": {
     "EditDoc1": "NameEdited1",
     "EditDoc2": "NameEdited2",
@@ -457,8 +463,7 @@
     "tagsType": "Year"
   },
   "addTagsName": {
-    "tagInput": "2024",
-    "DocumentName1": "116"
+    "tagInput": "2024"
   },
   "uploadMore": {
     "DocumentName1": "PPT721"

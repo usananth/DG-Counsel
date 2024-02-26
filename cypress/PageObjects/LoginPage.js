@@ -1,4 +1,4 @@
-class LoginPOM {
+class LoginPage {
   loginElements = {
     userEmail: () => cy.get("input#id_email"),
     userPasswrod: () => cy.get("input#id_password"),
@@ -20,4 +20,5 @@ class LoginPOM {
     this.loginElements.loginBtn().click();
   }
 }
-export default LoginPOM;
+
+module.exports = new LoginPage();
