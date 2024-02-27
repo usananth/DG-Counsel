@@ -12,12 +12,13 @@
   },
 
   "BrowseDocuments": {
-    "Doc1": "Test5.jpg",
-    "Doc2": "Test6.jpg"
+    "Doc1": "Test1.jpg",
+    "Doc2": "Test2.jpg",
+    "Renamed": "Rename10.jpg"
   },
   "DocumentNameAssert": {
-    "Doc1": "rename1",
-    "Doc2": "rename4"
+    "Doc1": "NameEdited1",
+    "Doc2": "rename11"
   },
   "editDocumentName": {
     "EditDoc1": "NameEdited1",

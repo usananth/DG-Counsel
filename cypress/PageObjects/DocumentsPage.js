@@ -83,16 +83,23 @@ class DocumentsPage {
     cy.get("select.textbox").select(extMatterSelect);
   }
   //Select Documents Browse Button
-  ClickBrowseBtn1() {
-    cy.wait(1000);
-    cy.get('[type="file"]').attachFile(["Test1.jpg", "Test2.jpg"], {
-      force: true,
-    });
-  }
+  // ClickBrowseBtn1() {
+  //   cy.wait(1000);
+  //   cy.get('[type="file"]').attachFile(["Test1.jpg", "Test2.jpg"], {
+  //     force: true,
+  //   });
+  // }
   ClickBrowseBtn11(Doc1, Doc2) {
     cy.wait(1000);
     cy.get('[type="file"]').attachFile([Doc1, Doc2], {
       force: true,
+    });
+  }
+  ClickBrowseBtn109(Doc1) {
+    cy.wait(5000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "rename.jpg",
     });
   }
   ClickBrowseBtn108(Doc1, Doc2) {
@@ -101,9 +108,10 @@ class DocumentsPage {
       [
         {
           filepath: Doc1,
-          fileName: "rename5.jpg",
+          fileName: "rename10.jpg",
+
           filePath: Doc2,
-          fileName: "rename4.jpg",
+          fileName: "rename11.jpg",
         },
       ],
       {
@@ -294,7 +302,6 @@ class DocumentsPage {
         .clear({
           force: true,
         })
-        .clear()
         .type(DocDesc);
       cy.wait(1000);
       cy.get(".mat-datepicker-input").clear({ force: true }).type(ExpDate);

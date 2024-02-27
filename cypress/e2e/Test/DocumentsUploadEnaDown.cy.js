@@ -28,7 +28,8 @@ describe("Documents In Departments", () => {
   });
   it.only("TestCase: 1.Documents-IntMat-Upload-ViewChanges", () => {
     Documents.SelectMatterDropdown(data.selectDepartments.selectMatterInt);
-    Documents.ClickBrowseBtn108(browseDoc1, browseDoc2);
+    //Documents.ClickBrowseBtn108(browseDoc1, browseDoc2);
+    Documents.ClickBrowseBtn109(browseDoc1);
     Documents.UploadSaveBtn();
     Documents.ViewChanges();
     cy.wait(2000);
