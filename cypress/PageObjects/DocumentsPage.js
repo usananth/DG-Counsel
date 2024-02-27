@@ -83,9 +83,37 @@ class DocumentsPage {
     cy.get("select.textbox").select(extMatterSelect);
   }
   //Select Documents Browse Button
-  ClickBrowseBtn() {
+  ClickBrowseBtn1() {
     cy.wait(1000);
-    cy.get('[type="file"]').attachFile(["Document1.jpg", "Object2.jpg"], {
+    cy.get('[type="file"]').attachFile(["Test1.jpg", "Test2.jpg"], {
+      force: true,
+    });
+  }
+  ClickBrowseBtn11(Doc1, Doc2) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile([Doc1, Doc2], {
+      force: true,
+    });
+  }
+  ClickBrowseBtn108(Doc1, Doc2) {
+    cy.wait(5000);
+    cy.get('[type="file"]').attachFile(
+      [
+        {
+          filepath: Doc1,
+          fileName: "rename5.jpg",
+          filePath: Doc2,
+          fileName: "rename4.jpg",
+        },
+      ],
+      {
+        force: true,
+      }
+    );
+  }
+  ClickBrowseBtn3() {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile(["Test3.jpg", "Test4.jpg"], {
       force: true,
     });
   }
@@ -97,7 +125,7 @@ class DocumentsPage {
     });
   }
   //Select Documents Browse Button
-  ClickBrowseBtn1() {
+  ClickBrowseBtn5() {
     cy.wait(1000);
     cy.get('[type="file"]').attachFile(["48A.jpg", "XPath11.pdf"], {
       force: true,

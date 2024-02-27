@@ -1,8 +1,9 @@
 import Documents from "../../PageObjects/DocumentsPage";
 import Login from "../../PageObjects/LoginPage";
+
 describe("Documents In Departments", () => {
   var data;
-  var selectDepts, addTagsType, addTagsName, editDocuments;
+  var selectDepts, addTagsType, addTagsName, browseDoc1, browseDoc2;
 
   before(() => {
     Login.visit();
@@ -17,25 +18,26 @@ describe("Documents In Departments", () => {
     selectDepts = [data.selectDepartments.Dept1, data.selectDepartments.Dept2];
     addTagsType = data.addTagsType.tagsType;
     addTagsName = data.addTagsName.tagInput;
+    browseDoc1 = data.BrowseDocuments.Doc1;
+    browseDoc2 = data.BrowseDocuments.Doc2;
     Documents.DocsMenuClick();
     Documents.UploadTabClick();
     Documents.SelectDeptAdd();
     Documents.SelectDepts(selectDepts);
     Documents.SelectDeptMinus();
   });
-  it("TestCase: 1.Documents-IntMat-Upload-ViewChanges", () => {
+  it.only("TestCase: 1.Documents-IntMat-Upload-ViewChanges", () => {
     Documents.SelectMatterDropdown(data.selectDepartments.selectMatterInt);
-    Documents.ClickBrowseBtn();
-    Documents.EnableDownload();
+    Documents.ClickBrowseBtn108(browseDoc1, browseDoc2);
     Documents.UploadSaveBtn();
     Documents.ViewChanges();
     cy.wait(2000);
-    Documents.DocsNameAssert(data.DocumentNameAssert.Document1);
+    Documents.DocsNameAssert(data.DocumentNameAssert.Doc1);
     Documents.DocsNameAssert(data.DocumentNameAssert.Doc2);
   });
   it.only("TestCase: 2.Documents-IntMat-Upload-Cancel", () => {
     Documents.SelectMatterDropdown(data.selectDepartments.selectMatterInt);
-    Documents.ClickBrowseBtn();
+    Documents.ClickBrowseBtn11(browseDoc1, browseDoc2);
     Documents.UploadCancelBtn();
   });
   it("TestCase:3.Documents-IntMat-EnaDown-ViewChanges", () => {

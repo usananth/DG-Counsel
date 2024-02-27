@@ -10,11 +10,14 @@
     "selectMatterInt": "LegalMatterInternal",
     "selectMatterExt": "Legal-External"
   },
+
+  "BrowseDocuments": {
+    "Doc1": "Test5.jpg",
+    "Doc2": "Test6.jpg"
+  },
   "DocumentNameAssert": {
-    "Doc1": "Object1",
-    "Doc2": "Object2",
-    "EditDoc3": "NameEdited3",
-    "EditDoc4": "NameEdited4"
+    "Doc1": "rename1",
+    "Doc2": "rename4"
   },
   "editDocumentName": {
     "EditDoc1": "NameEdited1",
