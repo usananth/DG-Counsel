@@ -26,39 +26,40 @@ describe("Documents In Departments", () => {
     Documents.SelectDepts(selectDepts);
     Documents.SelectDeptMinus();
   });
-  it.only("TestCase: 1.Documents-IntMat-Upload-ViewChanges", () => {
+  it("TestCase: 1.Documents-IntMat-Upload-ViewChanges", () => {
     Documents.SelectMatterDropdown(data.selectDepartments.selectMatterInt);
     //Documents.ClickBrowseBtn108(browseDoc1, browseDoc2);
-    Documents.ClickBrowseBtn109(browseDoc1);
+    Documents.ClickBrowseBtnTC1(browseDoc1);
     Documents.UploadSaveBtn();
     Documents.ViewChanges();
     cy.wait(2000);
     Documents.DocsNameAssert(data.DocumentNameAssert.Doc1);
     Documents.DocsNameAssert(data.DocumentNameAssert.Doc2);
   });
-  it.only("TestCase: 2.Documents-IntMat-Upload-Cancel", () => {
+  it("TestCase: 2.Documents-IntMat-Upload-Cancel", () => {
     Documents.SelectMatterDropdown(data.selectDepartments.selectMatterInt);
-    Documents.ClickBrowseBtn11(browseDoc1, browseDoc2);
+    Documents.ClickBrowseBtn11(browseDoc2);
     Documents.UploadCancelBtn();
   });
   it("TestCase:3.Documents-IntMat-EnaDown-ViewChanges", () => {
     Documents.SelectMatterDropdown(data.selectDepartments.selectMatterInt);
-    Documents.ClickBrowseBtn();
+    Documents.ClickBrowseBtnTC3(browseDoc2);
     Documents.EnableDownload();
     Documents.UploadSaveBtn();
     Documents.ViewChanges();
     cy.wait(2000);
-    Documents.DocsNameAssert(data.documentsAssert.DocumentName3);
+    Documents.DocsNameAssert(data.DocumentNameAssert.Doc3);
   });
 
   it("TestCase:4.Documents-IntMat-EnaDown-ViewChanges-Cancel", () => {
     Documents.SelectMatterDropdown(data.selectDepartments.selectMatterInt);
-    Documents.ClickBrowseBtn();
+    Documents.ClickBrowseBtnTC4(browseDoc2);
+    Documents.EnableDownload();
     Documents.UploadCancelBtn();
   });
   it("TestCase:5.Document-IntMat-EnaDown-AddTags-ViewChanges", () => {
     Documents.SelectMatterDropdown(data.selectDepartments.selectMatterInt);
-    Documents.ClickBrowseBtn1();
+    Documents.ClickBrowseBtnTC5(browseDoc2);
     Documents.EnableDownload();
     Documents.AddTagsToDocument(addTagsType, addTagsName);
     Documents.UploadSaveBtn();

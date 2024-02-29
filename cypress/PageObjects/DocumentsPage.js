@@ -95,11 +95,501 @@ class DocumentsPage {
       force: true,
     });
   }
-  ClickBrowseBtn109(Doc1) {
-    cy.wait(5000);
+  ClickBrowseBtnTC1(Doc1) {
+    cy.wait(1000);
     cy.get('[type="file"]').attachFile({
       filePath: Doc1,
-      fileName: "rename.jpg",
+      fileName: "NameEdited2.jpg",
+    });
+  }
+  ClickBrowseBtnTC3(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC4(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited4.jpg",
+    });
+  }
+  ClickBrowseBtnTC5(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited5.jpg",
+    });
+  }
+  ClickBrowseBtnTC6(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC7(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC8(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC9(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC10(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC11(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC12(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC13(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC14(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC15(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC16(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC17(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnT18(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC19(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC20(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC21(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC22(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC23(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC24(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC25(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC26(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC27(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC28(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC29(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC30(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC31(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC32(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC33(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC34(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC35(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC36(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC37(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC38(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC39(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC40(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC41(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC42(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC43(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC44(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC45(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC46(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC47(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC48(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC49(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC50(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC51(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC52(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC53(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC54(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC55(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC56(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC57(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC58(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC59(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC60(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC61(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC62(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC63(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC64(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC65(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC66(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC67(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC68(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC69(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC70(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC71(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
+    });
+  }
+  ClickBrowseBtnTC72(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited3.jpg",
     });
   }
   ClickBrowseBtn108(Doc1, Doc2) {
