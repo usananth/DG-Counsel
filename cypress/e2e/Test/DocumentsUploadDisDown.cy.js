@@ -2,7 +2,7 @@ import Documents from "../../PageObjects/DocumentsPage";
 import Login from "../../PageObjects/LoginPage";
 describe("Documents In Departments", () => {
   var data;
-  var selectDepts, addTagsType, addTagsName, editDocuments;
+  var selectDepts, addTagsType, addTagsName;
 
   before(() => {
     Login.visit();

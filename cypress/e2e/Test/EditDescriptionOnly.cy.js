@@ -1,5 +1,5 @@
 import "cypress-file-upload";
-import Documents from "../../PageObjects/DocumentsPage";
+import Documents from "../../PageObjects/DocumentsPOM";
 import Login from "../../PageObjects/LoginPage";
 describe("Documents In Departments", () => {
   var data;

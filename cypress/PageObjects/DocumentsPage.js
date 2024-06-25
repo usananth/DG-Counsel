@@ -1,5 +1,3 @@
-import "cypress-file-upload";
-const DocEdits = require("../fixtures/DocJson.json");
 class DocumentsPage {
   WebElements = {
     DocsMenu: () =>
@@ -38,7 +36,15 @@ class DocumentsPage {
     UploadMore: () => cy.get(".upload-btn"),
     AssertDocs: () => cy.xpath("//tr//td[1]"),
     AssertDesc: () => cy.xpath("//tbody/tr[1]/td[2]"),
+    AssertAddTag: () => cy.xpath("//tbody/tr[1]/td[5]"),
+    Dashboard: () => cy.get("#dashboard-icon > img"),
   };
+  //Dashboard Menu
+  DashboardMenu() {
+    cy.wait(2000);
+    cy.reload();
+    this.WebElements.Dashboard().click();
+  }
   // Documents Menu
   DocsMenuClick() {
     cy.wait(2000);
@@ -96,6 +102,13 @@ class DocumentsPage {
     });
   }
   ClickBrowseBtnTC1(Doc1) {
+    cy.wait(1000);
+    cy.get('[type="file"]').attachFile({
+      filePath: Doc1,
+      fileName: "NameEdited1.jpg",
+    });
+  }
+  ClickBrowseBtnTC2(Doc1) {
     cy.wait(1000);
     cy.get('[type="file"]').attachFile({
       filePath: Doc1,
@@ -713,6 +726,9 @@ class DocumentsPage {
   DescChangesAssert(descAssert) {
     this.WebElements.AssertDesc().should("contain", descAssert);
   }
+  AddTagsAssert(addTags) {
+    this.WebElements.AssertAddTag().should("contain", addTags);
+  }
 
   DocumentNameEdit(DocName) {
     cy.get(".fa.fa-edit").each(($element, $index, $list) => {
@@ -799,4 +815,5 @@ class DocumentsPage {
     });
   }
 }
+
 module.exports = new DocumentsPage();

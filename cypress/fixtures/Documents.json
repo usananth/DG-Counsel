@@ -12,7 +12,7 @@
   },
 
   "BrowseDocuments": {
-    "Doc1": "Test1.jpg",
+    "Doc1": "SampleDOC1.doc",
     "Doc2": "Test2.jpg",
     "Doc3": "SampleDOC1.doc",
     "Doc4": "SampleDOC1.doc",
@@ -533,21 +533,17 @@
     "expdateAssert71": "1/1/202571",
     "expdateAssert72": "1/1/202572"
   },
-  "documentsAssert": {
-    "DocumentName1": "1511",
-    "DocumentName2": "231"
-  },
 
-  "addTagsType": {
+  "TagsType": {
     "tagsType": "Year"
   },
-  "addTagsName": {
+  "TagsName": {
     "tagInput": "2024"
+  },
+  "AssertTags": {
+    "ATAssert1": "Year,2024"
   },
   "uploadMore": {
     "DocumentName1": "PPT721"
-  },
-  "documentsEdit": {
-    "DocumentName1": "3511"
   }
 }

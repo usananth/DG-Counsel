@@ -1,0 +1,18 @@
+{
+  "loginData": {
+    "inputmail": "gradle.ananth@gmail.com",
+    "inputpassword": "Test@123"
+  },
+  "searchFirm": {
+    "inputSearch": "Tesla India Pvt ltd",
+    "viewSearch": "Asain Paints"
+  },
+  "updateDepts": {
+    "deptOne": "Money Laundering",
+    "deptTwo": "Civil Law"
+  },
+  "assertDepts": {
+    "deptOne": "Money Laundering",
+    "deptTwo": "Civil Law"
+  }
+}

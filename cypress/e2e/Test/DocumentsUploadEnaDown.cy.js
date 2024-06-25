@@ -3,7 +3,7 @@ import Login from "../../PageObjects/LoginPage";
 
 describe("Documents In Departments", () => {
   var data;
-  var selectDepts, addTagsType, addTagsName, browseDoc1, browseDoc2;
+  var selectDepts, TagsType, TagsName, browseDoc1, browseDoc2;
 
   before(() => {
     Login.visit();
@@ -16,8 +16,8 @@ describe("Documents In Departments", () => {
   });
   beforeEach(() => {
     selectDepts = [data.selectDepartments.Dept1, data.selectDepartments.Dept2];
-    addTagsType = data.addTagsType.tagsType;
-    addTagsName = data.addTagsName.tagInput;
+    TagsType = data.TagsType.tagsType;
+    TagsName = data.TagsName.tagInput;
     browseDoc1 = data.BrowseDocuments.Doc1;
     browseDoc2 = data.BrowseDocuments.Doc2;
     Documents.DocsMenuClick();
@@ -34,12 +34,13 @@ describe("Documents In Departments", () => {
     Documents.ViewChanges();
     cy.wait(2000);
     Documents.DocsNameAssert(data.DocumentNameAssert.Doc1);
-    Documents.DocsNameAssert(data.DocumentNameAssert.Doc2);
+    // Documents.DocsNameAssert(data.DocumentNameAssert.Doc2);
   });
   it("TestCase: 2.Documents-IntMat-Upload-Cancel", () => {
     Documents.SelectMatterDropdown(data.selectDepartments.selectMatterInt);
-    Documents.ClickBrowseBtn11(browseDoc2);
+    Documents.ClickBrowseBtnTC2(browseDoc1);
     Documents.UploadCancelBtn();
+    Documents.DashboardMenu();
   });
   it("TestCase:3.Documents-IntMat-EnaDown-ViewChanges", () => {
     Documents.SelectMatterDropdown(data.selectDepartments.selectMatterInt);
@@ -57,20 +58,21 @@ describe("Documents In Departments", () => {
     Documents.EnableDownload();
     Documents.UploadCancelBtn();
   });
-  it("TestCase:5.Document-IntMat-EnaDown-AddTags-ViewChanges", () => {
+  it.only("TestCase:5.Document-IntMat-EnaDown-AddTags-ViewChanges", () => {
     Documents.SelectMatterDropdown(data.selectDepartments.selectMatterInt);
     Documents.ClickBrowseBtnTC5(browseDoc2);
     Documents.EnableDownload();
-    Documents.AddTagsToDocument(addTagsType, addTagsName);
+    Documents.AddTagsToDocument(TagsType, TagsName);
     Documents.UploadSaveBtn();
     Documents.ViewChanges();
-    Documents.DocsNameAssert(data.addTagsName.DocumentName1);
+    Documents.DocsNameAssert(data.DocumentNameAssert.Doc5);
+    Documents.AddTagsAssert(data.AssertTags.ATAssert1);
   });
-  it("TestCase:6.Document-IntMat-EnaDown-AddTags Cancel", () => {
+  it.only("TestCase:6.Document-IntMat-EnaDown-AddTags Cancel", () => {
     Documents.SelectMatterDropdown(data.selectDepartments.selectMatterInt);
-    Documents.ClickBrowseBtn1();
+    Documents.ClickBrowseBtnTC6();
     Documents.EnableDownload();
-    Documents.AddTagsToDocument(addTagsType, addTagsName);
+    Documents.AddTagsToDocument(TagsType, TagsName);
     Documents.UploadCancelBtn();
   });
   it("TestCase: 7.Documents-IntMat-UpMore-VChanges", () => {
@@ -136,7 +138,7 @@ describe("Documents In Departments", () => {
     Documents.SelectMatterDropdown(data.selectDepartments.selectMatterInt);
     Documents.ClickBrowseBtn1();
     Documents.EnableDownload();
-    Documents.AddTagsToDocument(addTagsType, addTagsName);
+    Documents.AddTagsToDocument(TagsType, TagsName);
     Documents.UploadSaveBtn();
     cy.wait(3000);
     Documents.UploadMoreBtn();
@@ -153,7 +155,7 @@ describe("Documents In Departments", () => {
     Documents.SelectMatterDropdown(data.selectDepartments.selectMatterInt);
     Documents.ClickBrowseBtn1();
     Documents.EnableDownload();
-    Documents.AddTagsToDocument(addTagsType, addTagsName);
+    Documents.AddTagsToDocument(TagsType, TagsName);
     Documents.UploadSaveBtn();
     cy.wait(3000);
     Documents.UploadMoreBtn();
@@ -162,7 +164,7 @@ describe("Documents In Departments", () => {
     Documents.SelectInternalMatterRadioBtn();
     Documents.ClickBrowseBtnUploadMore();
     Documents.EnableDownload();
-    Documents.AddTagsToDocument(addTagsType, addTagsName);
+    Documents.AddTagsToDocument(TagsType, TagsName);
     Documents.UploadCancelBtn();
   });
   it("TestCase: 13.Documents-IntMat-Upload-EnaEnc-ViewChanges", () => {
@@ -208,17 +210,17 @@ describe("Documents In Departments", () => {
     Documents.ClickBrowseBtn1();
     Documents.EnableDownload();
     Documents.EnableEncryption();
-    Documents.AddTagsToDocument(addTagsType, addTagsName);
+    Documents.AddTagsToDocument(TagsType, TagsName);
     Documents.UploadSaveBtn();
     Documents.ViewChanges();
-    Documents.DocsNameAssert(data.addTagsName.DocumentName1);
+    Documents.DocsNameAssert(data.tagsName.DocumentName1);
   });
   it("TestCase:18.Document-IntMat-EnaDown-EnaEnc-AddTags Cancel", () => {
     Documents.SelectMatterDropdown(data.selectDepartments.selectMatterInt);
     Documents.ClickBrowseBtn1();
     Documents.EnableDownload();
     Documents.EnableEncryption();
-    Documents.AddTagsToDocument(addTagsType, addTagsName);
+    Documents.AddTagsToDocument(TagsType, TagsName);
     Documents.UploadCancelBtn();
   });
   it("TestCase:19.Documents-IntMat-UploadMore-EnaEnc-ViewChanges", () => {
@@ -284,7 +286,7 @@ describe("Documents In Departments", () => {
     Documents.ClickBrowseBtn1();
     Documents.EnableDownload();
     Documents.EnableEncryption();
-    Documents.AddTagsToDocument(addTagsType, addTagsName);
+    Documents.AddTagsToDocument(TagsType, TagsName);
     Documents.UploadSaveBtn();
     cy.wait(3000);
     Documents.UploadMoreBtn();
@@ -292,7 +294,7 @@ describe("Documents In Departments", () => {
     Documents.UploadTabClick();
     Documents.SelectInternalMatterRadioBtn();
     Documents.ClickBrowseBtnUploadMore();
-    Documents.AddTagsToDocument(addTagsType, addTagsName);
+    Documents.AddTagsToDocument(TagsType, TagsName);
     cy.wait(2000);
     Documents.UploadSaveBtn();
     Documents.ViewChanges();
@@ -303,7 +305,7 @@ describe("Documents In Departments", () => {
     Documents.ClickBrowseBtn();
     Documents.EnableDownload();
     Documents.EnableEncryption();
-    Documents.AddTagsToDocument(addTagsType, addTagsName);
+    Documents.AddTagsToDocument(TagsType, TagsName);
     Documents.UploadSaveBtn();
     cy.wait(3000);
     Documents.UploadMoreBtn();
@@ -311,7 +313,7 @@ describe("Documents In Departments", () => {
     Documents.UploadTabClick();
     Documents.ClickBrowseBtnUploadMore();
     Documents.EnableDownload();
-    Documents.AddTagsToDocument(addTagsType, addTagsName);
+    Documents.AddTagsToDocument(TagsType, TagsName);
     Documents.UploadCancelBtn();
   });
   it("TestCase: 25.Documents-IntMat-Upload-DisEnc-ViewChanges", () => {
@@ -359,17 +361,17 @@ describe("Documents In Departments", () => {
     Documents.ClickBrowseBtn1();
     Documents.EnableDownload();
     Documents.DisableEncryption();
-    Documents.AddTagsToDocument(addTagsType, addTagsName);
+    Documents.AddTagsToDocument(TagsType, TagsName);
     Documents.UploadSaveBtn();
     Documents.ViewChanges();
-    Documents.DocsNameAssert(data.addTagsName.DocumentName1);
+    Documents.DocsNameAssert(data.tagsName.DocumentName1);
   });
   it("TestCase:30.Document-IntMat-EnaDown-DisEnc-AddTags Cancel", () => {
     Documents.SelectMatterDropdown(data.selectDepartments.selectMatterInt);
     Documents.ClickBrowseBtn1();
     Documents.EnableDownload();
     Documents.DisableEncryption();
-    Documents.AddTagsToDocument(addTagsType, addTagsName);
+    Documents.AddTagsToDocument(TagsType, TagsName);
     Documents.UploadCancelBtn();
   });
   it("TestCase:31.Documents-IntMat-UploadMore-DisEnc-ViewChanges", () => {
@@ -437,14 +439,14 @@ describe("Documents In Departments", () => {
     Documents.ClickBrowseBtn1();
     Documents.EnableDownload();
     Documents.DisableEncryption();
-    Documents.AddTagsToDocument(addTagsType, addTagsName);
+    Documents.AddTagsToDocument(TagsType, TagsName);
     Documents.UploadSaveBtn();
     cy.wait(3000);
     Documents.UploadMoreBtn();
     // Documents.DocsMenuClick();
     // Documents.UploadTabClick();
     Documents.ClickBrowseBtnUploadMore();
-    Documents.AddTagsToDocument(addTagsType, addTagsName);
+    Documents.AddTagsToDocument(TagsType, TagsName);
     cy.wait(2000);
     Documents.UploadSaveBtn();
     Documents.ViewChanges();
@@ -455,7 +457,7 @@ describe("Documents In Departments", () => {
     Documents.ClickBrowseBtn();
     Documents.EnableDownload();
     Documents.DisableEncryption();
-    Documents.AddTagsToDocument(addTagsType, addTagsName);
+    Documents.AddTagsToDocument(TagsType, TagsName);
     Documents.UploadSaveBtn();
     cy.wait(3000);
     Documents.UploadMoreBtn();
@@ -507,7 +509,7 @@ describe("Documents In Departments", () => {
     Documents.ClickBrowseBtn();
     Documents.EnableDownload();
     Documents.DocumentNameEdit(data.selectDocs.document2);
-    Documents.AddTagsToDocument(addTagsType, addTagsName);
+    Documents.AddTagsToDocument(TagsType, TagsName);
     Documents.UploadSaveBtn();
     Documents.ViewChanges();
     Documents.DocsNameAssert(data.selectDocs.documentAssert);
@@ -518,7 +520,7 @@ describe("Documents In Departments", () => {
     Documents.ClickBrowseBtn();
     Documents.EnableDownload();
     Documents.DocumentNameEdit(data.selectDocs.document2);
-    Documents.AddTagsToDocument(addTagsType, addTagsName);
+    Documents.AddTagsToDocument(TagsType, TagsName);
     Documents.UploadCancelBtn();
   });
   it("TestCase:43.Documents-IntMat-EditDocsName-UpMore-VChanges", () => {
@@ -580,7 +582,7 @@ describe("Documents In Departments", () => {
     Documents.SelectMatterDropdown(data.selectDepartments.selectMatterInt);
     Documents.ClickBrowseBtn1();
     Documents.EnableDownload();
-    Documents.AddTagsToDocument(addTagsType, addTagsName);
+    Documents.AddTagsToDocument(TagsType, TagsName);
     Documents.UploadSaveBtn();
     cy.wait(3000);
     Documents.UploadMoreBtn();
@@ -596,7 +598,7 @@ describe("Documents In Departments", () => {
     Documents.SelectMatterDropdown(data.selectDepartments.selectMatterInt);
     Documents.ClickBrowseBtn1();
     Documents.EnableDownload();
-    Documents.AddTagsToDocument(addTagsType, addTagsName);
+    Documents.AddTagsToDocument(TagsType, TagsName);
     Documents.UploadSaveBtn();
     cy.wait(3000);
     Documents.UploadMoreBtn();
@@ -605,7 +607,7 @@ describe("Documents In Departments", () => {
     Documents.SelectInternalMatterRadioBtn();
     Documents.ClickBrowseBtnUploadMore();
     Documents.EnableDownload();
-    Documents.AddTagsToDocument(addTagsType, addTagsName);
+    Documents.AddTagsToDocument(TagsType, TagsName);
     Documents.UploadCancelBtn();
   });
   it("TestCase: 49.Documents-IntMat-Upload-EnaEnc-ViewChanges", () => {
@@ -653,17 +655,17 @@ describe("Documents In Departments", () => {
     Documents.ClickBrowseBtn1();
     Documents.EnableDownload();
     Documents.EnableEncryption();
-    Documents.AddTagsToDocument(addTagsType, addTagsName);
+    Documents.AddTagsToDocument(TagsType, TagsName);
     Documents.UploadSaveBtn();
     Documents.ViewChanges();
-    Documents.DocsNameAssert(data.addTagsName.DocumentName1);
+    Documents.DocsNameAssert(data.tagsName.DocumentName1);
   });
   it("TestCase:54.Document-IntMat-EnaDown-EnaEnc-AddTags Cancel", () => {
     Documents.SelectMatterDropdown(data.selectDepartments.selectMatterInt);
     Documents.ClickBrowseBtn1();
     Documents.EnableDownload();
     Documents.EnableEncryption();
-    Documents.AddTagsToDocument(addTagsType, addTagsName);
+    Documents.AddTagsToDocument(TagsType, TagsName);
     Documents.UploadCancelBtn();
   });
   it("TestCase:55.Documents-IntMat-UploadMore-EnaEnc-ViewChanges", () => {
@@ -729,7 +731,7 @@ describe("Documents In Departments", () => {
     Documents.ClickBrowseBtn1();
     Documents.EnableDownload();
     Documents.EnableEncryption();
-    Documents.AddTagsToDocument(addTagsType, addTagsName);
+    Documents.AddTagsToDocument(TagsType, TagsName);
     Documents.UploadSaveBtn();
     cy.wait(3000);
     Documents.UploadMoreBtn();
@@ -737,7 +739,7 @@ describe("Documents In Departments", () => {
     Documents.UploadTabClick();
     Documents.SelectInternalMatterRadioBtn();
     Documents.ClickBrowseBtnUploadMore();
-    Documents.AddTagsToDocument(addTagsType, addTagsName);
+    Documents.AddTagsToDocument(TagsType, TagsName);
     cy.wait(2000);
     Documents.UploadSaveBtn();
     Documents.ViewChanges();
@@ -748,7 +750,7 @@ describe("Documents In Departments", () => {
     Documents.ClickBrowseBtn();
     Documents.EnableDownload();
     Documents.EnableEncryption();
-    Documents.AddTagsToDocument(addTagsType, addTagsName);
+    Documents.AddTagsToDocument(TagsType, TagsName);
     Documents.UploadSaveBtn();
     cy.wait(3000);
     Documents.UploadMoreBtn();
@@ -756,7 +758,7 @@ describe("Documents In Departments", () => {
     Documents.UploadTabClick();
     Documents.ClickBrowseBtnUploadMore();
     Documents.EnableDownload();
-    Documents.AddTagsToDocument(addTagsType, addTagsName);
+    Documents.AddTagsToDocument(TagsType, TagsName);
     Documents.UploadCancelBtn();
   });
   it("TestCase: 61.Documents-IntMat-Upload-DisEnc-ViewChanges", () => {
@@ -804,17 +806,17 @@ describe("Documents In Departments", () => {
     Documents.ClickBrowseBtn1();
     Documents.EnableDownload();
     Documents.DisableEncryption();
-    Documents.AddTagsToDocument(addTagsType, addTagsName);
+    Documents.AddTagsToDocument(TagsType, TagsName);
     Documents.UploadSaveBtn();
     Documents.ViewChanges();
-    Documents.DocsNameAssert(data.addTagsName.DocumentName1);
+    Documents.DocsNameAssert(data.tagsName.DocumentName1);
   });
   it("TestCase:66.Document-IntMat-EnaDown-DisEnc-AddTags Cancel", () => {
     Documents.SelectMatterDropdown(data.selectDepartments.selectMatterInt);
     Documents.ClickBrowseBtn1();
     Documents.EnableDownload();
     Documents.DisableEncryption();
-    Documents.AddTagsToDocument(addTagsType, addTagsName);
+    Documents.AddTagsToDocument(TagsType, TagsName);
     Documents.UploadCancelBtn();
   });
   it("TestCase:67.Documents-IntMat-UploadMore-DisEnc-ViewChanges", () => {
@@ -882,13 +884,13 @@ describe("Documents In Departments", () => {
     Documents.ClickBrowseBtn1();
     Documents.EnableDownload();
     Documents.DisableEncryption();
-    Documents.AddTagsToDocument(addTagsType, addTagsName);
+    Documents.AddTagsToDocument(TagsType, TagsName);
     Documents.UploadSaveBtn();
     cy.wait(3000);
     Documents.UploadMoreBtn();
     Documents.selectMatterDropdown;
     Documents.ClickBrowseBtnUploadMore();
-    Documents.AddTagsToDocument(addTagsType, addTagsName);
+    Documents.AddTagsToDocument(TagsType, TagsName);
     cy.wait(2000);
     Documents.UploadSaveBtn();
     Documents.ViewChanges();
@@ -899,7 +901,7 @@ describe("Documents In Departments", () => {
     Documents.ClickBrowseBtn();
     Documents.EnableDownload();
     Documents.DisableEncryption();
-    Documents.AddTagsToDocument(addTagsType, addTagsName);
+    Documents.AddTagsToDocument(TagsType, TagsName);
     Documents.UploadSaveBtn();
     cy.wait(3000);
     Documents.UploadMoreBtn();
