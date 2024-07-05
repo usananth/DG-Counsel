@@ -1,0 +1,133 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-06-27T03:46:08.253Z",
+    "end": "2024-06-27T03:46:21.197Z",
+    "duration": 12944,
+    "testsRegistered": 2,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 1,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "d14d3a45-f91b-430c-b696-d933079b1857",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Test\\DocumentsUploadEnaDown.cy.js",
+      "file": "cypress\\e2e\\Test\\DocumentsUploadEnaDown.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4b87dcdf-e3f6-4316-9201-9bdbfce7425a",
+          "title": "Documents In Departments",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TestCase:5.Document-IntMat-EnaDown-AddTags-ViewChanges",
+              "fullTitle": "Documents In Departments TestCase:5.Document-IntMat-EnaDown-AddTags-ViewChanges",
+              "timedOut": null,
+              "duration": 8685,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\DocumentsUploadEnaDown.cy.js\\\\Documents In Departments -- TestCase5.Document-IntMat-EnaDown-AddTags-ViewChanges -- before each hook (failed).png\"\n    ]\n  ]\n}",
+              "code": "_DocumentsPage.default.SelectMatterDropdown(data.selectDepartments.selectMatterInt);\n_DocumentsPage.default.ClickBrowseBtnTC5(browseDoc2);\n_DocumentsPage.default.EnableDownload();\n_DocumentsPage.default.AddTagsToDocument(TagsType, TagsName);\n_DocumentsPage.default.UploadSaveBtn();\n_DocumentsPage.default.ViewChanges();\n_DocumentsPage.default.DocsNameAssert(data.DocumentNameAssert.Doc5);\n_DocumentsPage.default.AddTagsAssert(data.AssertTags.ATAssert1);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `//div//label[text()='Sanity Testing']//following::input[1]`, but never found it.\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Documents In Departments`",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `//div//label[text()='Sanity Testing']//following::input[1]`, but never found it.\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Documents In Departments`\n    at DocumentsPage.SelectDepts (webpack://dgcounsel/./cypress/PageObjects/DocumentsPage.js:65:9)\n    at Context.eval (webpack://dgcounsel/./cypress/e2e/Test/DocumentsUploadEnaDown.cy.js:26:14)",
+                "diff": null
+              },
+              "uuid": "ef18cdc4-def9-4ba9-bdcb-1f89c6e7f0d2",
+              "parentUUID": "4b87dcdf-e3f6-4316-9201-9bdbfce7425a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TestCase:6.Document-IntMat-EnaDown-AddTags Cancel",
+              "fullTitle": "Documents In Departments TestCase:6.Document-IntMat-EnaDown-AddTags Cancel",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_DocumentsPage.default.SelectMatterDropdown(data.selectDepartments.selectMatterInt);\n_DocumentsPage.default.ClickBrowseBtnTC6();\n_DocumentsPage.default.EnableDownload();\n_DocumentsPage.default.AddTagsToDocument(TagsType, TagsName);\n_DocumentsPage.default.UploadCancelBtn();",
+              "err": {},
+              "uuid": "fecedd45-4c17-4440-ad3c-0f6f65f1bf2e",
+              "parentUUID": "4b87dcdf-e3f6-4316-9201-9bdbfce7425a",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "ef18cdc4-def9-4ba9-bdcb-1f89c6e7f0d2"
+          ],
+          "pending": [],
+          "skipped": [
+            "fecedd45-4c17-4440-ad3c-0f6f65f1bf2e"
+          ],
+          "duration": 8685,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "Cypress Inline Reporter",
+        "embeddedScreenshots": false,
+        "inlineAssets": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

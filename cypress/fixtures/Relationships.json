@@ -5,11 +5,51 @@
   },
   "searchFirm": {
     "inputSearch": "Tesla India Pvt ltd",
-    "viewSearch": "Asain Paints"
+    "viewSearch": "Lauditor 2 Corporate"
+  },
+  "unsharedDocs": {
+    "docOne": "F3",
+    "doc2": "F7",
+    "docThree": "DocCSV",
+    "docFour": "DocTXT",
+    "deptTwo": "Civil Law"
+  },
+  "sharedDocsAssert": {
+    "docOne": "F3",
+    "docTwo": "F7",
+    "docThree": "DocCSV",
+    "docFour": "DocTXT",
+    "deptTwo": "Civil Law"
+  },
+  "sharedDocs": {
+    "docOne": "F3",
+    "doc2": "JPG 2",
+    "docThree": "DocCSV",
+    "doc4": "F6",
+    "deptTwo": "Civil Law",
+    "doc18": "EditDoc11"
+  },
+  "unsharedDocsAssert": {
+    "docOne": "F3",
+    "doc18": "EditDoc11",
+    "docTwo": "JPG 2",
+    "docThree": "DocCSV",
+    "doc4": "F6",
+    "deptTwo": "Civil Law"
+  },
+  "addComments": {
+    "comments13": "lorem went through Mrs Shears’ gate, closing it behind me. I walked onto her lawn and knelt beside the dog. I put my hand on the muzzle of the dog. It was still warm.",
+    "comments14": "lorem went through Mrs Shears’ gate, closing it behind me. I walked onto her lawn and knelt beside the dog. I put my hand on the muzzle of the dog. It was still warm.",
+    "comments15": "lorem went through Mrs Shears’ gate, closing it behind me. I walked onto her lawn and knelt beside the dog. I put my hand on the muzzle of the dog. It was still warm.",
+    "comments16": "lorem went through Mrs Shears’ gate, closing it behind me. I walked onto her lawn and knelt beside the dog. I put my hand on the muzzle of the dog. It was still warm.",
+    "comments17": "lorem went through Mrs Shears’ gate, closing it behind me. I walked onto her lawn and knelt beside the dog. I put my hand on the muzzle of the dog. It was still warm.",
+    "comments18": "lorem went through Mrs Shears’ gate, closing it behind me. I walked onto her lawn and knelt beside the dog. I put my hand on the muzzle of the dog. It was still warm.",
+    "comments19": "lorem went through Mrs Shears’ gate, closing it behind me. I walked onto her lawn and knelt beside the dog. I put my hand on the muzzle of the dog. It was still warm.",
+    "comments20": "lorem went through Mrs Shears’ gate, closing it behind me. I walked onto her lawn and knelt beside the dog. I put my hand on the muzzle of the dog. It was still warm."
   },
   "updateDepts": {
-    "deptOne": "Money Laundering",
-    "deptTwo": "Civil Law"
+    "Dept1": "Money Laundering",
+    "Dept2": "Civil Law"
   },
   "assertDepts": {
     "deptOne": "Money Laundering",
