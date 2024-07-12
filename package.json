@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "chrono-node": "^2.7.6",
     "cypress-xpath": "^2.0.1"
   },
   "name": "dgcounsel",

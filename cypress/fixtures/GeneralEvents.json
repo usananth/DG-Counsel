@@ -1,0 +1,66 @@
+{
+  "loginData": {
+    "inputmail": "gradle.ananth@gmail.com",
+    "inputpassword": "Test@123"
+  },
+  "selectMatter": {
+    "matterName": "GENERAL-TM-1"
+  },
+  "selectTask": {
+    "taskName": "Consultation"
+  },
+
+  "selectDate": {
+    "eventsDate": "07/10/2024"
+  },
+
+  "eventTimes": {
+    "startTime": "10:30",
+    "endTime": "11:00"
+  },
+  "timeZone": {
+    "timeZone": "(GMT+05:30) India Standard Time - Kolkata"
+  },
+  "eventNotifications": {
+    "Time": "10",
+    "Durations": "Minutes"
+  },
+  "meetingLinks": {
+    "links": "www.googleapi.meetings-hsbchdfc"
+  },
+
+  "dialupNumber": {
+    "number": "+919878987877"
+  },
+
+  "locations": {
+    "locate": "Chennai"
+  },
+  "teamMembers": {
+    "member1": "Member 1",
+    "member2": "Member 2"
+  },
+  "meetsAgenta": {
+    "meetsAgen": "www.googleapi.meetings-hsbchdfc"
+  },
+
+  "externalCounsel": {
+    "extCounsel": "Lauditor 2 Corporate"
+  },
+  "counselMembers": {
+    "counsMembers": "L2CTeam Member"
+  },
+  "meetingsDocs": {
+    "meetDocs": "F3"
+  },
+
+  "eventdate": {
+    "evenDate": 10
+  },
+  "meetsName": {
+    "meetName": "10:30 AM GENERAL-TM-1 - Consultation"
+  },
+  "meetsWeek": {
+    "meetingweek": "7/4/2024"
+  }
+}
