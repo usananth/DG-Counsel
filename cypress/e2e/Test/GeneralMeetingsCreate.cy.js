@@ -45,7 +45,7 @@ describe("General Events Creations", () => {
       addTMember2 = data.teamMembers.member2;
       meetingAgenda = data.meetsAgenta.meetsAgen;
       externalCounsel = data.externalCounsel.extCounsel;
-      //  externalCounselMembers = data.externalCounsel.extCounsel;
+      //externalCounselMembers = data.externalCounsel.extCounsel;
       counselMembers = data.counselMembers.counsMembers;
       meetingDocs = data.meetingsDocs.meetDocs;
       NeededDate = data.eventdate.evenDate;
@@ -78,7 +78,7 @@ describe("General Events Creations", () => {
     GeneralMeetingsPage.AddMeetingsDocuments(meetingDocs);
     GeneralMeetingsPage.MeetingsSaveButton();
     GeneralMeetingsPage.ViewChanges();
-    GeneralMeetingsPage.ViewMeetingsDay(NeededDate);
+    GeneralMeetingsPage.ViewMeetingsDay(NeedDate);
     GeneralMeetingsPage.ClickMeetings(meetingName);
   });
 
@@ -106,4 +106,30 @@ describe("General Events Creations", () => {
 
     //  GeneralMeetingsPage.ClickMeetings(meetingName);
   });
+
+  it.only("TestCase: 2.Calendar-GeneralEvents-Creation", () => {
+    GeneralMeetingsPage.GeneralEventRadioBtn();
+    GeneralMeetingsPage.GeneralMatterSelection(matterSelection);
+    GeneralMeetingsPage.SelectTask(task);
+    GeneralMeetingsPage.SelectDate(eventDate);
+    GeneralMeetingsPage.EventStartTime(startTime);
+    // GeneralMeetingsPage.EventEndTime(endTime);
+    GeneralMeetingsPage.TimeZone(data.timeZone.timeZone);
+    GeneralMeetingsPage.AddNotifications(addNoticeTime);
+    GeneralMeetingsPage.AddNotifications1(addNoticeDuration);
+    GeneralMeetingsPage.MeetingsLinkInput(meetingLinks);
+    GeneralMeetingsPage.DialupNumber(dialupNumber);
+    GeneralMeetingsPage.Locations(locations);
+    GeneralMeetingsPage.MeetingsAgenta(meetingAgenda);
+    GeneralMeetingsPage.AddTeamMembers(addTMember1, addTMember2);
+    GeneralMeetingsPage.AddExternalCounsels(externalCounsel);
+    GeneralMeetingsPage.ExternalCounselMembers(counselMembers);
+    GeneralMeetingsPage.AddMeetingsDocuments(meetingDocs);
+    GeneralMeetingsPage.MeetingsSaveButton();
+    GeneralMeetingsPage.ViewChanges();
+    GeneralMeetingsPage.ViewMeetingsWeek(NeedWeek);
+
+    //  GeneralMeetingsPage.ClickMeetings(meetingName);
+  });
+
 });
