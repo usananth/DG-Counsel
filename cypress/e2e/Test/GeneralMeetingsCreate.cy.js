@@ -24,7 +24,7 @@ describe("General Events Creations", () => {
     addTMember2,
     meetingName,
     NeededDate,
-    NeededWeek;
+    NeedWeek;
   before(() => {
     Login.visit();
     cy.fixture("GeneralEvents").then((value) => {
@@ -50,7 +50,7 @@ describe("General Events Creations", () => {
       meetingDocs = data.meetingsDocs.meetDocs;
       NeededDate = data.eventdate.evenDate;
       meetingName = data.meetsName.meetName;
-      NeededWeek = data.meetsWeek.meetingweek;
+      NeedWeek = data.meetsWeek.meetingweek;
     });
   });
   beforeEach(() => {
@@ -102,7 +102,7 @@ describe("General Events Creations", () => {
     GeneralMeetingsPage.AddMeetingsDocuments(meetingDocs);
     GeneralMeetingsPage.MeetingsSaveButton();
     GeneralMeetingsPage.ViewChanges();
-    GeneralMeetingsPage.ViewMeetingsWeek(NeededWeek);
+    GeneralMeetingsPage.ViewMeetingsWeek(NeedWeek);
 
     //  GeneralMeetingsPage.ClickMeetings(meetingName);
   });
