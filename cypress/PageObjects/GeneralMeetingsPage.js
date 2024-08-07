@@ -178,7 +178,6 @@ class GeneralMeetingsPage {
       return Math.round((date - startOfYear) / 604_800_000);
     };
     let date1 = new Date().toLocaleString();
-    //let trim1 = date1.toLocaleString();
     let trim1 = date1.slice(0, 9);
     let eveWeek = weekOfYear(new Date(eventWeek));
     let curWeek = weekOfYear(new Date(trim1));
@@ -201,7 +200,7 @@ class GeneralMeetingsPage {
   }
 
   ClickMeetings(meetingName) {
-    cy.wait(2000);
+    cy.wait(5000);
     cy.xpath(
       "//div[@class='cal-day-columns']//*[text()='" + meetingName + "']"
     ).click({ multiple: true });
