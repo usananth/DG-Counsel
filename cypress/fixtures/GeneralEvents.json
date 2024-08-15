@@ -9,11 +9,9 @@
   "selectTask": {
     "taskName": "Consultation"
   },
-
   "selectDate": {
     "eventsDate": "08/01/2024"
   },
-
   "eventTimes": {
     "startTime": "10:30",
     "endTime": "11:00"
@@ -28,11 +26,9 @@
   "meetingLinks": {
     "links": "www.googleapi.meetings-hsbchdfc"
   },
-
   "dialupNumber": {
     "number": "+919878987877"
   },
-
   "locations": {
     "locate": "Chennai"
   },
@@ -43,17 +39,15 @@
   "meetsAgenta": {
     "meetsAgen": "www.googleapi.meetings-hsbchdfc"
   },
-
-  "externalCounsel": {
+  "externalCounsels": {
     "extCounsel": "Lauditor 2 Corporate"
   },
-  "counselMembers": {
+  "counselMember": {
     "counsMembers": "L2CTeam Member"
   },
   "meetingsDocs": {
     "meetDocs": "Files DG4"
   },
-
   "eventdate": {
     "evenDate": 1
   },
